@@ -378,8 +378,8 @@ h6 {
         position: relative;
         z-index: 2;
 
-        .btn{
-          width: 15rem;
+        .btn {
+            width: 15rem;
         }
     }
 }
@@ -536,7 +536,8 @@ h6 {
     }
 
     form {
-        label , ::-webkit-input-placeholder { 
+        label,
+        ::-webkit-input-placeholder {
             font-family: 'Cardo', serif;
         }
     }
@@ -597,21 +598,21 @@ h6 {
         color: $color_secondary;
     }
 
-    a{
-      color: $color_secondary;
+    a {
+        color: $color_secondary;
     }
 
     .social a:hover {
         text-decoration: none;
     }
     .footer-brand {
-        img{
-          height: 80px;
+        img {
+            height: 80px;
         }
         .brand {
-          font-family: 'Cardo', serif;
-          font-size: 1.5rem;
-          font-weight: 700;
+            font-family: 'Cardo', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
         }
         font-size: 2rem;
         li {
