@@ -1,0 +1,225 @@
+{% extends 'base_website.html' %}
+{% load static %}
+{% block title %}
+    {{ setting.blogname }} | {{ setting.blogdescription }}
+{% endblock %}
+{% block content %}
+        <!-- MASTER HEADER STARTS-->
+        <header class="masterHead">
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center">
+                    <h1 class="site">
+                        {{ setting.blogname }}
+                    </h1>
+                    <h2>
+                        {{ setting.blogdescription }}
+                    </h2>
+                </div>
+            </div>
+        </header>
+        <!--MASTER HEADER ENDS-->
+
+        <!-- FEATURETTE STARTS -->
+        <section class="section-featurette">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 col-one">
+                        <h2>{{ featurette.title }}</h2>
+                        <p class="lead">
+                            {{ featurette.content }}
+                        </p>
+                    </div>
+                    <div class="col-md-5">
+                        <img
+                            src="{% static 'website/images/'%}{{ featurette.image_url }}"
+                            class="featurette-image img-fluid mx-auto"
+                            alt="{{ featurette.title }}"
+                            style="width: 500px; height: 500px"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- FEATURETTE ENDS -->
+
+        {% include '../gallery.html' %}
+
+        <!--BLOG 2 STARTS-->
+        <section class="home-blog-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center pb-4">
+                        <h2>Chefs column</h2>
+                        <p class="lead">
+                            Viris eripuit voluptaria cu per, sed id movet.
+                        </p>
+                    </div>
+                    {% for blog in blogs %}
+                    <div class="col-lg-4 col-md-6 col-sm-12 p-3">
+                        <div class="card">
+                            <img
+                                class="card-img-top"
+                                src="{% static 'website/images/' %}{{ blog.image_url }}" 
+                                alt="{{ blog.title }}"
+                            />
+                            <div class="card-body">
+                                <a href="#">
+                                    <h5>{{ blog.title }}</h5>
+                                </a>
+                                <p>{{ blog.content }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <!--BLOG 2 ENDS-->
+
+        <!--JUMBOTRON STARTS-->
+        <section id="jumbotron2" 
+        class="jumbotron2">
+            <div class="overlay"></div>
+            <div class="container">
+                <img src="{% static 'website/images/' %}{{ jumbotron.image_url }}" alt="" class="pb-4" />
+                <p class="lead">
+                    {{ jumbotron.content }}
+                </p>
+                <p>
+                    <a href="#" class="btn btn-a-p-2 btn-lg">
+                        Explore now
+                    </a>
+                </p>
+            </div>
+        </section>
+        <!--JUMBOTRON ENDS-->
+
+        <!-- BOOK TABLE STARTS  -->
+        <section class="book-table">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center pb-4">
+                        <h2>Book A Table</h2>
+                        <p class="lead">
+                            Viris eripuit voluptaria cu per, sed id movet.
+                        </p>
+                    </div>
+
+                    <div class="col-md-6 offset-md-3">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="name">Your fullname</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="name"
+                                        placeholder="Your fullname"
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="email">Email</label>
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        id="email"
+                                        placeholder="youremail@example.com"
+                                    />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="phone">Phone</label>
+                                    <input
+                                        type="phone"
+                                        class="form-control"
+                                        id="phone"
+                                        placeholder="+49 177 123 456"
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="person">Person</label>
+                                    <input
+                                        type="number"
+                                        class="form-control"
+                                        id="person"
+                                        placeholder="1"
+                                    />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="datetime">Date & time</label>
+                                    <input
+                                        type="datetime-local"
+                                        class="form-control"
+                                        id="datetime"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="gridCheck"
+                                    />
+                                    <label
+                                        class="form-check-label"
+                                        for="gridCheck"
+                                    >
+                                        I agree for xerci quaerendum
+                                        conclusionemque ne vim.
+                                    </label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                Sign in
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- BOOK TABLE ENDS  -->
+
+        <!--NEWSLETTER STARTS-->
+        <section id="newsletter" class="newsletter-1 py-5 text-a-p-light">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 my-auto p-3"></div>
+                    <div
+                        class="col-lg-6 col-md-6 col-sm-12 right-content p-3 my-auto"
+                    >
+                        <h1>Subscribe to us</h1>
+                        <p class="lead">
+                            Nec et tale accusam comprehensam, eu fabulas
+                            accumsan.
+                        </p>
+
+                        <form>
+                            <div class="input-group">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="youremail@example.com"
+                                />
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-a-p-1">
+                                        Subscribe!
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--NEWSLETTER ENDS-->
+
+        {% include '../footer.html' %}
+
+{% endblock %}
+
