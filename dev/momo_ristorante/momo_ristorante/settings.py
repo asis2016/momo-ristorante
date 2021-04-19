@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'website',
     'momos',
     'blogs',
+    'api.apps.ApiConfig',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [

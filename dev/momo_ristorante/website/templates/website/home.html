@@ -24,14 +24,15 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-7 col-one">
-                        <h2>{{ featurette.title }}</h2>
+                        <!-- 0 = featurette (pid) -->
+                        <h2>{{ homepage.0.title }}</h2>
                         <p class="lead">
-                            {{ featurette.content }}
+                            {{ homepage.0.content }}
                         </p>
                     </div>
                     <div class="col-md-5">
                         <img
-                            src="{% static 'website/images/'%}{{ featurette.image_url }}"
+                            src="{% static 'website/images/'%}{{ homepage.0.image_url }}"
                             class="featurette-image img-fluid mx-auto"
                             alt="{{ featurette.title }}"
                             style="width: 500px; height: 500px"

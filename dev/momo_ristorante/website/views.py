@@ -5,12 +5,18 @@ from .models import Homepage, Setting
 
 def home(request):
     return render(request, "website/home.html", {
+        "homepage": Homepage.objects.all(),
         "momos": Momo.objects.all(),
         "blogs" : Blog.objects.all(),
-        "featurette": Homepage.objects.get(pk='featurette'),
         "jumbotron": Homepage.objects.get(pk='jumbotron'),
         "setting": Setting.objects.get(pk=1)
         })
 
 def underconstruction(request):
     return render(request, "website/under-construction.html")
+
+def index(request):
+    return render(request, 'index.html')
+
+def booking(request):
+    return render(request, 'website/booking.html')

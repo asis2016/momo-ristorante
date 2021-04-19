@@ -1,5 +1,12 @@
 from django.db import models
 
+class Booking(models.Model):
+    name = models.TextField()
+    email = models.TextField()
+    phone = models.TextField()
+    person = models.IntegerField()
+    datestamp = models.DateTimeField()
+    created_at = models.DateTimeField(auto_now_add=True)
 
 class Setting(models.Model):
     siteurl = models.TextField()
