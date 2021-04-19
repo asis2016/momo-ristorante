@@ -15,12 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from website.views import home, underconstruction, index
+from website.views import home, underconstruction
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('under-construction.html', underconstruction, name="under-construction"),
-    path('index', index, name='index'),
     path('', home, name="home"),
 ]
 

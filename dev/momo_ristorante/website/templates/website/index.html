@@ -1,5 +1,10 @@
-{% extends 'base_website.html' %}
+{% extends 'base.html' %}
 {% load static %}
+
+{% block head %}
+    <link href="{% static 'website/css/style.css'%}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
 {% block title %}
     {{ setting.blogname }} | {{ setting.blogdescription }}
 {% endblock %}
@@ -87,7 +92,7 @@
                     {{ jumbotron.content }}
                 </p>
                 <p>
-                    <a href="#" class="btn btn-a-p-2 btn-lg">
+                    <a href="#" class="btn btn-primary btn-lg">
                         Explore now
                     </a>
                 </p>

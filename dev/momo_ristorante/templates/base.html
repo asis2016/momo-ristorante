@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!--Meta-->
         <meta charset="UTF-8" />
         <meta
             name="description"
@@ -17,21 +16,11 @@
         <meta name="designer" content="Ashish Singh Maharjan" />
         <meta name="url" content="http://www.asm.com.np" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        <title>
-            {% block title %}{% endblock %}
-        </title>
-
-        <!--Website Icon-->
-        <link rel="icon" type="image/png" href="assets/images/icon.png" />
+        <link rel="icon" type="image/png" href="{% static '/images/icons/favicon.ico' %}" />
 
         <!-- Bootstrap core CSS -->
-        <link href="{% static 'website/css/main.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
 
-        <link
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-            rel="stylesheet"
-        />
         <!--Google Fonts-->
         <link
             href="https://fonts.googleapis.com/css?family=Indie+Flower|Montserrat|Raleway|Roboto|Pacifico"
@@ -68,8 +57,10 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"
         />
 
-        <!--Custom CSS-->
-        <link href="{% static 'website/css/style.css'%}" rel="stylesheet" type="text/css" />
+        {% block head %}
+        {% endblock %}
+
+        <title>{% block title %}{% endblock %}</title>
     </head>
 <body>
     {% include 'nav.html' %}

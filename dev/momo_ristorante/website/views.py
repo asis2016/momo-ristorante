@@ -4,7 +4,7 @@ from blogs.models import Blog
 from .models import Homepage, Setting
 
 def home(request):
-    return render(request, "website/home.html", {
+    return render(request, "website/index.html", {
         "homepage": Homepage.objects.all(),
         "momos": Momo.objects.all(),
         "blogs" : Blog.objects.all(),
@@ -14,9 +14,6 @@ def home(request):
 
 def underconstruction(request):
     return render(request, "website/under-construction.html")
-
-def index(request):
-    return render(request, 'index.html')
 
 def booking(request):
     return render(request, 'website/booking.html')
