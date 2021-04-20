@@ -3,6 +3,7 @@
 
 {% block head %}
     <link href="{% static 'website/css/style.css'%}" rel="stylesheet" type="text/css" />
+    {% comment %} Font Awesome {% endcomment %}
 {% endblock %}
 
 {% block title %}
@@ -10,7 +11,7 @@
 {% endblock %}
 {% block content %}
         <!-- MASTER HEADER STARTS-->
-        <header class="masterHead">
+        <header id="master-head" class="master-head">
             <div class="container d-flex h-100 align-items-center">
                 <div class="mx-auto text-center">
                     <h1 class="site">
@@ -25,7 +26,7 @@
         <!--MASTER HEADER ENDS-->
 
         <!-- FEATURETTE STARTS -->
-        <section class="section-featurette">
+        <section id="featurette" class="section-featurette">
             <div class="container">
                 <div class="row">
                     <div class="col-md-7 col-one">
@@ -48,10 +49,10 @@
         </section>
         <!-- FEATURETTE ENDS -->
 
-        {% include '../gallery.html' %}
+        {% include './gallery.html' %}
 
         <!--BLOG 2 STARTS-->
-        <section class="home-blog-2">
+        <section id="blog" class="home-blog-2">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center pb-4">
@@ -83,7 +84,7 @@
         <!--BLOG 2 ENDS-->
 
         <!--JUMBOTRON STARTS-->
-        <section id="jumbotron2" 
+        <section id="our-story" id="jumbotron2" 
         class="jumbotron2">
             <div class="overlay"></div>
             <div class="container">
@@ -92,8 +93,9 @@
                     {{ jumbotron.content }}
                 </p>
                 <p>
-                    <a href="#" class="btn btn-primary btn-lg">
-                        Explore now
+                    <a href="#" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-angle-double-right"></i
+                                    >&nbsp;Explore Now
                     </a>
                 </p>
             </div>
@@ -101,11 +103,11 @@
         <!--JUMBOTRON ENDS-->
 
         <!-- BOOK TABLE STARTS  -->
-        <section class="book-table">
+        <section id="book-table" class="book-table">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center pb-4">
-                        <h2>Book A Table</h2>
+                        <h2>Book a Table</h2>
                         <p class="lead">
                             Viris eripuit voluptaria cu per, sed id movet.
                         </p>
@@ -180,8 +182,8 @@
                                     </label>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">
-                                Sign in
+                            <button type="submit" class="btn btn-main">
+                                <i class="fas fa-bookmark"></i> Book a Table
                             </button>
                         </form>
                     </div>
@@ -191,7 +193,7 @@
         <!-- BOOK TABLE ENDS  -->
 
         <!--NEWSLETTER STARTS-->
-        <section id="newsletter" class="newsletter-1 py-5 text-a-p-light">
+        <section id="newsletter" class="newsletter-1 py-5 ">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row">
@@ -199,10 +201,9 @@
                     <div
                         class="col-lg-6 col-md-6 col-sm-12 right-content p-3 my-auto"
                     >
-                        <h1>Subscribe to us</h1>
+                        <h1>Newsletter</h1>
                         <p class="lead">
-                            Nec et tale accusam comprehensam, eu fabulas
-                            accumsan.
+                            Subscribe to us for more information.
                         </p>
 
                         <form>

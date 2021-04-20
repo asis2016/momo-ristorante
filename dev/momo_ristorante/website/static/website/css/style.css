@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   font-family: "Roboto", serif;
@@ -19,13 +23,32 @@ h6 {
 
 .btn {
   border-radius: 0px;
+  border-color: none;
+}
+
+.btn-main {
+  background-color: #8ab86f;
+  color: #fff;
+}
+.btn-main:hover {
+  background-color: #a1d683;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #50514f;
+  color: #fff;
+}
+.btn-secondary:hover {
+  background-color: #40413f;
+  color: #fff;
 }
 
 .lead {
   font-family: "Roboto", serif;
 }
 
-.masterHead {
+.master-head {
   position: relative;
   height: auto;
   min-height: 35rem;
@@ -37,148 +60,46 @@ h6 {
   background-attachment: scroll;
   background-size: cover;
 }
-.masterHead h1 {
+.master-head h1 {
   font-size: 2rem;
   line-height: 2rem;
   letter-spacing: 0.1rem;
 }
-.masterHead h2 {
+.master-head h2 {
   font-size: 1rem;
   letter-spacing: 0.0625em;
 }
-.masterHead h1,
-.masterHead h2 {
+.master-head h1,
+.master-head h2 {
   background: -webkit-linear-gradient(white, rgba(255, 255, 255, 0.8));
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
-.masterHead .fa-heart {
+.master-head .fa-heart {
   color: #a1d683;
 }
 
 @media (min-width: 768px) {
-  .masterHead h1 {
+  .master-head h1 {
     font-size: 4rem;
     line-height: 7rem;
   }
 }
 @media (min-width: 992px) {
-  .masterHead {
+  .master-head {
     height: 100vh;
     padding: 0;
   }
-  .masterHead h1 {
+  .master-head h1 {
     font-size: 5rem;
     line-height: 5rem;
     letter-spacing: 0.1rem;
   }
-  .masterHead h2 {
+  .master-head h2 {
     font-size: 1.8rem;
   }
 }
-/* ARCHIVE PRODUCTS
---------------------------------------------------------------------------------
-*/
-.archive-products .item a,
-.archive-products .item a:hover {
-  color: #fff;
-}
-
-.archive-products {
-  padding-top: 2rem;
-  padding-bottom: 6rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.archive-products .item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.2rem;
-  box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.3);
-}
-
-.archive-products .item img {
-  max-width: 100%;
-  -moz-transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.archive-products .item:hover img {
-  -moz-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
-.archive-products .item .item-details {
-  position: absolute;
-  background-color: rgba(218, 110, 113, 0.5);
-  bottom: 0;
-  color: #fff;
-  width: 100%;
-}
-
-.archive-products .item:hover .addtocart {
-  display: block;
-}
-
-.archive-products .item .addtocart {
-  position: absolute;
-  width: 100%;
-  display: none;
-  top: 50%;
-  text-align: center;
-}
-
-.archive-products-jumbotron {
-  position: relative;
-  padding-top: 8rem;
-  padding-bottom: 3rem;
-  margin: 0;
-}
-
-.archive-products-jumbotron h1 {
-  font-family: "Pacifico", cursive;
-  font-size: 3rem;
-}
-
-.archive-products-jumbotron .container {
-  max-width: 40rem;
-  position: relative;
-  z-index: 2;
-}
-
-.archive-products-jumbotron {
-  text-align: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("images/slide2.jpg");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  color: #fff;
-}
-
-.archive-products-jumbotron .overlay {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: #000;
-  opacity: 0.2;
-  z-index: 1;
-}
-
-/* CART
---------------------------------------------------------------------------------
-*/
-/* CHECKOUT
---------------------------------------------------------------------------------
-*/
 /* CONTACT US
 --------------------------------------------------------------------------------
 */
@@ -217,12 +138,27 @@ h6 {
   height: 60px;
 }
 #mainNav .nav-link {
-  color: #f4f2f5;
+  color: #f5f5ef;
 }
 #mainNav .navbar-nav .nav-item:hover {
   color: fade(white, 80%);
   outline: none;
   background-color: transparent;
+}
+#mainNav .dropdown-menu {
+  background-color: #50514f;
+  border-radius: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+#mainNav .dropdown-menu .dropdown-item {
+  color: #fff;
+}
+#mainNav .dropdown-menu .dropdown-item:hover {
+  color: #a1d683;
+  text-decoration: underline;
+}
+#mainNav .dropdown-menu .dropdown-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 #mainNav .navbar-nav .nav-item:active,
@@ -241,7 +177,7 @@ h6 {
   }
   #mainNav .navbar-brand {
     padding: 0.5rem 0;
-    color: #f4f2f5;
+    color: #f5f5ef;
   }
   #mainNav .navbar-brand:hover {
     color: #a1d683;
@@ -250,7 +186,7 @@ h6 {
     -webkit-transition: none;
     transition: none;
     padding: 2rem 1.5rem;
-    color: #f4f2f5;
+    color: #f5f5ef;
     font-weight: 600;
   }
   #mainNav .nav-link:hover {
@@ -272,7 +208,7 @@ h6 {
   }
 
   #mainNav.navbar-shrink .nav-link {
-    color: #f4f2f5;
+    color: #f5f5ef;
     padding: 1.5rem 1.5rem 1.25rem;
     border-bottom: 0.25rem solid transparent;
   }
@@ -291,17 +227,6 @@ h6 {
     border-bottom: 0.25rem solid #a1d683;
   }
 }
-#mainNav .dropdown-menu {
-  background-color: #281926;
-}
-#mainNav .dropdown-menu .dropdown-item {
-  color: #fff;
-}
-#mainNav .dropdown-menu .dropdown-item:hover {
-  color: #a1d683;
-  text-decoration: underline;
-}
-
 #mainNav .dropdown-menu .dropdown-item {
   background-color: transparent;
 }
@@ -416,7 +341,7 @@ h6 {
 .home-top-deals-3 {
   padding-top: 6rem;
   padding-bottom: 6rem;
-  border-bottom: 1px solid #281926;
+  border-bottom: 1px solid #50514f;
 }
 .home-top-deals-3 img {
   height: 120px;
@@ -554,10 +479,10 @@ h6 {
   color: #a1d683;
 }
 .footer-1 .footer-brand .text-muted {
-  color: #281926 !important;
+  color: #50514f !important;
 }
-.footer-1 .footer-brand .designer a {
-  color: #281926;
+.footer-1 .designer {
+  color: #50514f !important;
 }
 
 @media (min-width: 576px) {

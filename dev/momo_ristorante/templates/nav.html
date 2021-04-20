@@ -9,7 +9,7 @@
             id="mainNav"
         >
             <div class="container main-menu">
-                <a class="navbar-brand" href="{% url 'home' %}">
+                <a class="navbar-brand" href="#master-head">
                     <img src="{% static '/images/momo-logo.png' %}" alt="{{setting.title}}" />
                 </a>
                 <button
@@ -25,121 +25,53 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
+                        <li>
+                            <a class="nav-link" href="#blog">
+                                Blog
+                            </a>
+                        </li>
+                                                <li>
+                            <a class="nav-link" href="#gallery">
+                                Gallery
+                            </a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a
                                 class="nav-link dropdown-toggle"
-                                href="{% url 'home' %}"
+                                href="{% url 'under-construction' %}"
                                 id="navbarDropdown"
                                 role="button"
                                 data-toggle="dropdown"
                                 aria-haspopup="true"
                                 aria-expanded="false"
                             >
-                                Pages
+                                About us
                             </a>
                             <div
                                 class="dropdown-menu"
                                 aria-labelledby="navbarDropdown"
                             >
-                                <a class="dropdown-item" href="index.html"
-                                    >Landing Page</a
+                                <a class="dropdown-item" href="#featurette"
+                                    >Mo:Mo: of the Day</a
                                 >
                                 <div class="dropdown-divider"></div>
-                                <a
-                                    class="dropdown-item"
-                                    href="archive-blog.html"
-                                    >Archive - Blog</a
-                                >
-                                <a
-                                    class="dropdown-item"
-                                    href="archive-blog-single.html"
-                                    >Archive - Blog - Single</a
+                                <a class="dropdown-item" href="#our-story"
+                                    >Our Story</a
                                 >
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="page.html"
-                                    >Page</a
+                                <a class="dropdown-item" href="#newsletter"
+                                    >Newsletter</a
                                 >
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="contact.html"
+                                <a class="dropdown-item" href="#contact"
                                     >Contact us</a
                                 >
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="404.html">404</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="search.html"
-                                    >Search</a
-                                >
                             </div>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a
-                                class="nav-link dropdown-toggle"
-                                href="{% url 'under-construction' %}"
-                                id="navbarDropdown"
-                                role="button"
-                                data-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                            >
-                                Shop
+                        <li>
+                            <a class="nav-link" href="#book-table">
+                                Book a Table
                             </a>
-                            <div
-                                class="dropdown-menu"
-                                aria-labelledby="navbarDropdown"
-                            >
-                                <a
-                                    class="dropdown-item"
-                                    href="archive-products.html"
-                                    >Archive - Products</a
-                                >
-                                <a
-                                    class="dropdown-item"
-                                    href="archive-product-single.html"
-                                    >Archive - Product - Single</a
-                                >
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="cart.html"
-                                    >Cart</a
-                                >
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="checkout.html"
-                                    >Checkout</a
-                                >
-                                <a class="dropdown-item" href="thankyou.html"
-                                    >Thank You</a
-                                >
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="myaccount.html"
-                                    >My Account</a
-                                >
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a
-                                class="nav-link dropdown-toggle"
-                                href="{% url 'under-construction' %}"
-                                id="navbarDropdown"
-                                role="button"
-                                data-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                            >
-                                Widgets
-                            </a>
-                            <div
-                                class="dropdown-menu"
-                                aria-labelledby="navbarDropdown"
-                            >
-                                <a class="dropdown-item" href="archive.html"
-                                    >Archive</a
-                                >
-                                <a
-                                    class="dropdown-item"
-                                    href="archive-single.html"
-                                    >Archive-Single</a
-                                >
-                                <a class="dropdown-item" href="404.html">404</a>
-                            </div>
                         </li>
                     </ul>
                 </div>
