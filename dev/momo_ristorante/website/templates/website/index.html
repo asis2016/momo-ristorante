@@ -50,38 +50,7 @@
         <!-- FEATURETTE ENDS -->
 
         {% include './gallery.html' %}
-
-        <!--BLOG 2 STARTS-->
-        <section id="blog" class="home-blog-2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center pb-4">
-                        <h2>Chefs column</h2>
-                        <p class="lead">
-                            Viris eripuit voluptaria cu per, sed id movet.
-                        </p>
-                    </div>
-                    {% for blog in blogs %}
-                    <div class="col-lg-4 col-md-6 col-sm-6 p-3">
-                        <div class="card">
-                            <img
-                                class="card-img-top"
-                                src="{% static 'website/images/' %}{{ blog.image_url }}" 
-                                alt="{{ blog.title }}"
-                            />
-                            <div class="card-body">
-                                <a href="#">
-                                    <h5>{{ blog.title }}</h5>
-                                </a>
-                                <p>{{ blog.content }}</p>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </section>
-        <!--BLOG 2 ENDS-->
+        {% include './blog.html' %}
 
         <!--JUMBOTRON STARTS-->
         <section id="our-story" id="jumbotron2" 
