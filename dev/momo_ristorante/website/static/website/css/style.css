@@ -22,7 +22,7 @@ h6 {
 }
 
 .btn {
-  border-radius: 0px;
+  border-radius: 0;
   border-color: none;
 }
 
@@ -405,6 +405,9 @@ h6 {
 .book-table form ::-webkit-input-placeholder {
   font-family: "Cardo", serif;
 }
+.book-table form .form-control {
+  border-radius: 0;
+}
 
 .newsletter-1 {
   background: url("/static/website/images/background4.jpg");
@@ -417,6 +420,7 @@ h6 {
   position: relative;
 }
 .newsletter-1 .form-control {
+  border-radius: 0;
   max-width: 300px;
 }
 .newsletter-1 .overlay {

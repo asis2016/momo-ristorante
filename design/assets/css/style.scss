@@ -540,6 +540,10 @@ h6 {
         ::-webkit-input-placeholder {
             font-family: 'Cardo', serif;
         }
+
+        .form-control{
+            border-radius: 0;
+        }
     }
 }
 
