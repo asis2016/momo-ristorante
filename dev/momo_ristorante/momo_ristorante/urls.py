@@ -15,11 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import url
 from website.views import home, underconstruction
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('under-construction.html', underconstruction, name="under-construction"),
-    path('', home, name="home"),
+    path('', home, name = "home"),
+
+    url(r'^dashboard/', include('dashboard.urls')),
 ]
 

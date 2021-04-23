@@ -104,7 +104,20 @@
                                 <a href="{% url 'under-construction' %}">Locations</a>
                             </li>
                             <li><a href="{% url 'under-construction' %}">Privacy</a></li>
-                            <li><a href="{% url 'under-construction' %}">Terms</a></li>
+                            <li><a href="{% url 'under-construction' %}"></a></li>
+                            
+
+                            {% comment %} Login {% endcomment %}
+                            {% if user.is_authenticated %}
+                                <li><a href="{% url 'dashboard_logout' %}">Logout</a></li>
+                            {% else %}
+                                <li><a href="{% url 'dashboard_login' %}">Login</a></li>
+                            {% endif %}
+
+                            <li>
+                                <a href="#">
+                                References</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

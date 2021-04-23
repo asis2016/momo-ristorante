@@ -1,6 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
-
 $bg_main: #f5f5ef;
 $color_primary: #a1d683;
 $color_primary_dark: #8ab86f;
@@ -8,27 +5,6 @@ $color_secondary: #50514f;
 $color_secondary_dark: #40413f;
 $color_text: #f5f5ef;
 $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
-
-html {
-  scroll-behavior: smooth;
-}
-
-html,
-body {
-  font-family: "Roboto", serif;
-  font-weight: 300;
-  height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Cardo", serif;
-  font-weight: 700;
-}
 
 .btn {
   border-radius: 0;
