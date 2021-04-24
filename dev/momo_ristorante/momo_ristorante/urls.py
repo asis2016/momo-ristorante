@@ -16,13 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
-from website.views import home, underconstruction
+from website.views import home, underconstruction, reference
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('under-construction.html', underconstruction, name="under-construction"),
+    path('under-construction.html', underconstruction, name="under_construction"),
     path('', home, name = "home"),
-
+    path('website/reference.html', reference, name='references'),
     url(r'^dashboard/', include('dashboard.urls')),
 ]
 
