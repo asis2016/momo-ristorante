@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>website package &#8212; a a documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="website-package">
+<h1>website package<a class="headerlink" href="#website-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="website.migrations.html">website.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="website.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="website.migrations.html#module-website.migrations.0001_initial">website.migrations.0001_initial module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="website.migrations.html#module-website.migrations.0002_alter_homepage_title">website.migrations.0002_alter_homepage_title module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="website.migrations.html#module-website.migrations.0003_booking">website.migrations.0003_booking module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="website.migrations.html#module-website.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-website.admin">
+<span id="website-admin-module"></span><h2>website.admin module<a class="headerlink" href="#module-website.admin" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-website.apps">
+<span id="website-apps-module"></span><h2>website.apps module<a class="headerlink" href="#module-website.apps" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="website.apps.WebsiteConfig">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">website.apps.</span></code><code class="sig-name descname"><span class="pre">WebsiteConfig</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#website.apps.WebsiteConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.apps.config.AppConfig</span></code></p>
+<dl class="py attribute">
+<dt id="website.apps.WebsiteConfig.default_auto_field">
+<code class="sig-name descname"><span class="pre">default_auto_field</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#website.apps.WebsiteConfig.default_auto_field" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="website.apps.WebsiteConfig.name">
+<code class="sig-name descname"><span class="pre">name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'website'</span></em><a class="headerlink" href="#website.apps.WebsiteConfig.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-website.models">
+<span id="website-models-module"></span><h2>website.models module<a class="headerlink" href="#module-website.models" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="website.models.Booking">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">website.models.</span></code><code class="sig-name descname"><span class="pre">Booking</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">person</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datestamp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">created_at</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#website.models.Booking" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="py exception">
+<dt id="website.models.Booking.DoesNotExist">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-name descname"><span class="pre">DoesNotExist</span></code><a class="headerlink" href="#website.models.Booking.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="website.models.Booking.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></code><a class="headerlink" href="#website.models.Booking.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="website.models.Booking.created_at">
+<code class="sig-name descname"><span class="pre">created_at</span></code><a class="headerlink" href="#website.models.Booking.created_at" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="website.models.Booking.datestamp">
+<code class="sig-name descname"><span class="pre">datestamp</span></code><a class="headerlink" href="#website.models.Booking.datestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="website.models.Booking.email">
+<code class="sig-name descname"><span class="pre">email</span></code><a class="headerlink" href="#website.models.Booking.email" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="website.models.Booking.get_next_by_created_at">
+<code class="sig-name descname"><span class="pre">get_next_by_created_at</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">*</span></em>, <em class="sig-param"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">created_at&gt;</span></em>, <em class="sig-param"><span class="pre">is_next=True</span></em>, <em class="sig-param"><span class="pre">**kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#website.models.Booking.get_next_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="website.models.Booking.get_next_by_datestamp">
+<code class="sig-name descname"><span class="pre">get_next_by_datestamp</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">*</span></em>, <em class="sig-param"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">datestamp&gt;</span></em>, <em class="sig-param"><span class="pre">is_next=True</span></em>, <em class="sig-param"><span class="pre">**kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#website.models.Booking.get_next_by_datestamp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="website.models.Booking.get_previous_by_created_at">
+<code class="sig-name descname"><span class="pre">get_previous_by_created_at</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">*</span></em>, <em class="sig-param"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">created_at&gt;</span></em>, <em class="sig-param"><span class="pre">is_next=False</span></em>, <em class="sig-param"><span class="pre">**kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#website.models.Booking.get_previous_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="website.models.Booking.get_previous_by_datestamp">
+<code class="sig-name descname"><span class="pre">get_previous_by_datestamp</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">*</span></em>, <em class="sig-param"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">datestamp&gt;</span></em>, <em class="sig-param"><span class="pre">is_next=False</span></em>, <em class="sig-param"><span class="pre">**kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#website.models.Booking.get_previous_by_datestamp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="website.models.Booking.id">
+<code class="sig-name descname"><span class="pre">id</span></code><a class="headerlink" href="#website.models.Booking.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="website.models.Booking.name">
+<code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#website.models.Booking.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="website.models.Booking.objects">
+<code class="sig-name descname"><span class="pre">objects</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#website.models.Booking.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="website.models.Booking.person">
+<code class="sig-name descname"><span class="pre">person</span></code><a class="headerlink" href="#website.models.Booking.person" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="website.models.Booking.phone">
+<code class="sig-name descname"><span class="pre">phone</span></code><a class="headerlink" href="#website.models.Booking.phone" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="website.models.Homepage">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">website.models.</span></code><code class="sig-name descname"><span class="pre">Homepage</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">homepage_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subtitle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#website.models.Homepage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="py exception">
+<dt id="website.models.Homepage.DoesNotExist">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-name descname"><span class="pre">DoesNotExist</span></code><a class="headerlink" href="#website.models.Homepage.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="website.models.Homepage.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></code><a class="headerlink" href="#website.models.Homepage.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="website.models.Homepage.content">
+<code class="sig-name descname"><span class="pre">content</span></code><a class="headerlink" href="#website.models.Homepage.content" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="website.models.Homepage.homepage_id">
+<code class="sig-name descname"><span class="pre">homepage_id</span></code><a class="headerlink" href="#website.models.Homepage.homepage_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="website.models.Homepage.image_url">
+<code class="sig-name descname"><span class="pre">image_url</span></code><a class="headerlink" href="#website.models.Homepage.image_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="website.models.Homepage.link_url">
+<code class="sig-name descname"><span class="pre">link_url</span></code><a class="headerlink" href="#website.models.Homepage.link_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="website.models.Homepage.objects">
+<code class="sig-name descname"><span class="pre">objects</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#website.models.Homepage.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="website.models.Homepage.subtitle">
+<code class="sig-name descname"><span class="pre">subtitle</span></code><a class="headerlink" href="#website.models.Homepage.subtitle" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="website.models.Homepage.title">
+<code class="sig-name descname"><span class="pre">title</span></code><a class="headerlink" href="#website.models.Homepage.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="website.models.Setting">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">website.models.</span></code><code class="sig-name descname"><span class="pre">Setting</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">siteurl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blogname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blogdescription</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">users_can_register</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_email</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mailserver_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mailserver_login</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#website.models.Setting" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="py exception">
+<dt id="website.models.Setting.DoesNotExist">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-name descname"><span class="pre">DoesNotExist</span></code><a class="headerlink" href="#website.models.Setting.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="website.models.Setting.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></code><a class="headerlink" href="#website.models.Setting.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="website.models.Setting.admin_email">
+<code class="sig-name descname"><span class="pre">admin_email</span></code><a class="headerlink" href="#website.models.Setting.admin_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="website.models.Setting.blogdescription">
+<code class="sig-name descname"><span class="pre">blogdescription</span></code><a class="headerlink" href="#website.models.Setting.blogdescription" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="website.models.Setting.blogname">
+<code class="sig-name descname"><span class="pre">blogname</span></code><a class="headerlink" href="#website.models.Setting.blogname" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="website.models.Setting.id">
+<code class="sig-name descname"><span class="pre">id</span></code><a class="headerlink" href="#website.models.Setting.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="website.models.Setting.mailserver_login">
+<code class="sig-name descname"><span class="pre">mailserver_login</span></code><a class="headerlink" href="#website.models.Setting.mailserver_login" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="website.models.Setting.mailserver_url">
+<code class="sig-name descname"><span class="pre">mailserver_url</span></code><a class="headerlink" href="#website.models.Setting.mailserver_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="website.models.Setting.objects">
+<code class="sig-name descname"><span class="pre">objects</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#website.models.Setting.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="website.models.Setting.siteurl">
+<code class="sig-name descname"><span class="pre">siteurl</span></code><a class="headerlink" href="#website.models.Setting.siteurl" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="website.models.Setting.users_can_register">
+<code class="sig-name descname"><span class="pre">users_can_register</span></code><a class="headerlink" href="#website.models.Setting.users_can_register" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-website.tests">
+<span id="website-tests-module"></span><h2>website.tests module<a class="headerlink" href="#module-website.tests" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-website.urls">
+<span id="website-urls-module"></span><h2>website.urls module<a class="headerlink" href="#module-website.urls" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-website.views">
+<span id="website-views-module"></span><h2>website.views module<a class="headerlink" href="#module-website.views" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="website-views-py">
+<h3>website/views.py<a class="headerlink" href="#website-views-py" title="Permalink to this headline">¶</a></h3>
+<p>Main entry view for ‘public’.</p>
+<dl class="py function">
+<dt id="website.views.about">
+<code class="sig-prename descclassname"><span class="pre">website.views.</span></code><code class="sig-name descname"><span class="pre">about</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#website.views.about" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return about page.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="website.views.blog_detail">
+<code class="sig-prename descclassname"><span class="pre">website.views.</span></code><code class="sig-name descname"><span class="pre">blog_detail</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#website.views.blog_detail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return single page for a blog.
+:param id: blog id
+:return: render()</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="website.views.blogs">
+<code class="sig-prename descclassname"><span class="pre">website.views.</span></code><code class="sig-name descname"><span class="pre">blogs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#website.views.blogs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return top 3 blog posts on the home.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="website.views.datas">
+<code class="sig-prename descclassname"><span class="pre">website.views.</span></code><code class="sig-name descname"><span class="pre">datas</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#website.views.datas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns data for home.
+Read the documentation for the :meth: <cite>home</cite> method.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="website.views.home">
+<code class="sig-prename descclassname"><span class="pre">website.views.</span></code><code class="sig-name descname"><span class="pre">home</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#website.views.home" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return render or HttpResponse for website &gt; home.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="website.views.reference">
+<code class="sig-prename descclassname"><span class="pre">website.views.</span></code><code class="sig-name descname"><span class="pre">reference</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#website.views.reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all external references used for the developing this project.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="website.views.underconstruction">
+<code class="sig-prename descclassname"><span class="pre">website.views.</span></code><code class="sig-name descname"><span class="pre">underconstruction</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#website.views.underconstruction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return “not developed” pages.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-website">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-website" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="app-website">
+<h3>App: website<a class="headerlink" href="#app-website" title="Permalink to this headline">¶</a></h3>
+<p>This app serves as home for public.</p>
+<p>This is incomplete documentation.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">a</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, a.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/website.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

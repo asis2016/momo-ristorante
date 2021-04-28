@@ -1,0 +1,7 @@
+{% extends 'base_website.html' %}
+
+{% block content %}
+{% for recipe in recipe_list %}
+{{ recipe.title }}
+{% endfor %}
+{% endblock %}

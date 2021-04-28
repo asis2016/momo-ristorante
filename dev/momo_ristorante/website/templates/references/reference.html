@@ -1,0 +1,43 @@
+{% extends 'base_website.html' %} 
+{% load static %} 
+
+{% block head %}
+<style>
+    .master-head{
+        min-height: 400px;
+    }
+
+    @media (min-width: 992px) {
+        .master-head {
+            height: 400px;
+        }
+    }
+</style>
+{% endblock %} 
+
+{% block title %} {{ setting.blogname }} | References {% endblock %} 
+
+{% block content %}
+    <!-- MASTER HEADER STARTS-->
+    <header id="master-head" class="master-head">
+        <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
+                <h1 class="site">References</h1>
+            </div>
+        </div>
+    </header>
+    <!--MASTER HEADER ENDS-->
+
+    <div class="container py-5">
+        <h2 class="pb-2 border-bottom">References</h2>
+        <div class="row g-5 py-5">
+            <div class="col-8 offset-lg-2">
+                <ul>
+                    <li>
+                        <a href="{% url 'under_construction' %}">First link</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

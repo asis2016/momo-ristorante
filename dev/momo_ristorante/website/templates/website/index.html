@@ -1,17 +1,17 @@
-{% extends 'base_website.html' %} 
-{% load static %} 
+{% extends 'base_website.html' %}
+{% load static %}
 
 {% block head %}
-{% endblock %} 
+{% endblock %}
 
-{% block title %} {{ setting.blogname }} | {{ setting.blogdescription }} {% endblock %} 
+{% block title %} {{ setting.blogname }} | {{ setting.blogdescription }} {% endblock %}
 
 {% block content %}
-  {% include './master-head.html' %} 
-  {% include './featurette.html' %} 
-  {% include '../galleries/momo.html' %} 
-  {% include '../blogs/blogs.html' %}
-  {% include './jumbotron.html' %}
-  {% include '../bookings/booking.html' %}
-  {% include './newsletter.html' %}
+{% include './_master_head.html' %}
+{% include './_featurette.html' %}
+{% include './_recipe.html' %}
+{% include './_blog.html' %}
+{% include './_jumbotron.html' %}
+{% include '../bookings/booking.html' %}
+{% include './_newsletter.html' %}
 {% endblock %}

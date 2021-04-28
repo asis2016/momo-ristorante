@@ -1,0 +1,17 @@
+{% load static %}
+<!--JUMBOTRON STARTS-->
+<section class="jumbotron2" id="jumbotron2" id="our-story">
+    <div class="overlay"></div>
+    <div class="container">
+        <img alt=""
+             class="pb-4"
+             src="{% static 'website/images/' %}{{ jumbotron.image_url }}"/>
+        <p class="lead">{{ jumbotron.content }}</p>
+        <p>
+            <a class="btn btn-secondary btn-lg" href="{% url 'under_construction' %}">
+                <i class="fas fa-angle-double-right"></i>&nbsp;Explore Now
+            </a>
+        </p>
+    </div>
+</section>
+<!--JUMBOTRON ENDS-->

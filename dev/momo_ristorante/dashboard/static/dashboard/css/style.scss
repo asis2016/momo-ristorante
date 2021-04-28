@@ -1,0 +1,146 @@
+$color_primary: #343a40 !important;
+
+body {
+  font-size: 0.875rem;
+}
+
+.feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+}
+
+/*
+ * Sidebar
+ */
+
+@media (max-width: 767.98px) {
+  .sidebar {
+    top: 5rem;
+  }
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+  color: inherit;
+}
+
+.sidebar {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100; /* Behind the navbar */
+  /* padding: 48px 0 0; 
+   Height of navbar */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+
+  .nav-link {
+    font-weight: 500;
+    color: #333;
+
+    .feather {
+      margin-right: 4px;
+      color: #727272;
+    }
+
+    &.active {
+      color: #007bff;
+    }
+  }
+
+  .sidebar-heading {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+}
+
+/*
+ * Navbar
+ */
+
+.navbar-brand {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.25);
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25);
+
+  .navbar-toggler {
+    top: 0.25rem;
+    right: 1rem;
+  }
+
+  .form-control {
+    padding: 0.75rem 1rem;
+    border-width: 0;
+    border-radius: 0;
+  }
+}
+
+.form-control-dark {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.1);
+
+  &:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+  }
+}
+
+// quick stat
+.quick-stat {
+  background-color: $color_primary;
+  border-radius: 3px;
+  position: relative;
+  display: block;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+
+  .stat {
+    padding: 5px 10px;
+    color: #fff;
+
+    h6 {
+      font-size: 40px;
+      font-weight: bold;
+      margin: 0 0 10px 0;
+      white-space: nowrap;
+      padding: 0;
+    }
+  }
+
+  .icon {
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    z-index: 0;
+    font-size: 90px;
+    color: rgba(0, 0, 0, 0.15);
+  }
+
+  .footer {
+    position: relative;
+    text-align: center;
+    padding: 2px 0;
+    color: #fff;
+    color: rgba(255, 255, 255, 0.8);
+    display: block;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,20 @@
+{% load static %}
+<!-- FEATURETTE STARTS -->
+<section class="section-featurette" id="featurette">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 col-one">
+                <h2>{{ featurette.title }}</h2>
+                <p class="lead">{{ featurette.content }}</p>
+            </div>
+            <div class="col-md-5">
+                <img alt="{{ featurette.title }}"
+                     class="featurette-image img-fluid mx-auto"
+                     src="{% static 'website/images/'%}{{ featurette.image_url }}"
+                     style="width: 500px; height: 500px"
+                />
+            </div>
+        </div>
+    </div>
+</section>
+<!-- FEATURETTE ENDS -->

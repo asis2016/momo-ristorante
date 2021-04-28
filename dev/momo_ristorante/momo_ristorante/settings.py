@@ -36,10 +36,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'dashboard',
-    'website',
-    'momos',
     'blogs',
+    'bookings',
+    'dashboard',
+    'employees',
+    'recipes',
+    'website',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +138,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'dashboard_index'
 LOGOUT_REDIRECT_URL = 'home'
 LOGIN_URL = 'dashboard_login'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'

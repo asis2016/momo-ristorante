@@ -1,0 +1,33 @@
+{% extends 'base_website.html' %}
+{% load static %}
+{% block title %}
+    {{ setting.blogname }} | {{ setting.blogdescription }}
+{% endblock %}
+
+{% block head %}
+    <style>
+        .master-head {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)),
+                url("/static/website/images/background4.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+{% endblock head %}
+
+{% block content %}
+    <header id="master-head" class="master-head">
+        <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
+                <h1 class="site">
+                    Under construction
+                </h1>
+                <h2>
+                    <a href="{% url 'home' %}">
+                        Go back to home
+                    </a>
+                </h2>
+            </div>
+        </div>
+    </header>
+{% endblock %}

@@ -3,7 +3,7 @@
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
-Function views
+    Function views
     1. Add an import:  from my_app import views
     2. Add a URL to urlpatterns:  path('', views.home, name='home')
 Class-based views
@@ -15,14 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.conf.urls import url
+
 from website.views import home, underconstruction, reference
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('under-construction.html', underconstruction, name="under_construction"),
-    path('', home, name = "home"),
-    path('website/reference.html', reference, name='references'),
-    url(r'^dashboard/', include('dashboard.urls')),
-]
 
+    # static
+    path('website/reference.html', reference, name='references'),
+    path('under-construction.html', underconstruction, name="under_construction"),
+
+    # dashboard
+    path('website/', include('website.urls')),
+    path('', home, name='home'),
+    path('dashboard/', include('dashboard.urls')),
+    path('employees/', include('employees.urls')),
+    path('recipes/', include('recipes.urls'))
+]
