@@ -1,5 +1,4 @@
 **/.idea/
-**/.vscode/
 **/venv/
 **/__pycache__/
 
@@ -8,8 +7,5 @@
 **/jupyter/
 *.pyc
 
-dev/momo_ristorante/website/__pycache__/views.cpython-38.pyc
-dev/momo_ristorante/momo_ristorante/__pycache__/settings.cpython-38.pyc
-
-**/env/
+**/notebook/
 /dev/database
