@@ -37,6 +37,12 @@
 <h2>website/views.py<a class="headerlink" href="#website-views-py" title="Permalink to this headline">¶</a></h2>
 <p>Main entry view for ‘public’.</p>
 <dl class="py function">
+<dt id="website.views.about">
+<code class="sig-prename descclassname"><span class="pre">website.views.</span></code><code class="sig-name descname"><span class="pre">about</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#website.views.about" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return about page.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt id="website.views.blog_detail">
 <code class="sig-prename descclassname"><span class="pre">website.views.</span></code><code class="sig-name descname"><span class="pre">blog_detail</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#website.views.blog_detail" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return single page for a blog.
@@ -47,7 +53,7 @@
 <dl class="py function">
 <dt id="website.views.blogs">
 <code class="sig-prename descclassname"><span class="pre">website.views.</span></code><code class="sig-name descname"><span class="pre">blogs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#website.views.blogs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return top 3 blog posts on the home.</p>
+<dd><p>Return blog archive.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -61,6 +67,18 @@ Read the documentation for the :meth: <cite>home</cite> method.</p>
 <dt id="website.views.home">
 <code class="sig-prename descclassname"><span class="pre">website.views.</span></code><code class="sig-name descname"><span class="pre">home</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#website.views.home" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return render or HttpResponse for website &gt; home.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="website.views.recipe">
+<code class="sig-prename descclassname"><span class="pre">website.views.</span></code><code class="sig-name descname"><span class="pre">recipe</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#website.views.recipe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return gallery arhive.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="website.views.recipe_detail">
+<code class="sig-prename descclassname"><span class="pre">website.views.</span></code><code class="sig-name descname"><span class="pre">recipe_detail</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#website.views.recipe_detail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return single page for a gallery.</p>
 </dd></dl>
 
 <dl class="py function">

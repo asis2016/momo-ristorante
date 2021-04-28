@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from website.views import home, underconstruction, reference
+from blogs.views import blogs, create
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,5 +31,9 @@ urlpatterns = [
     path('', home, name='home'),
     path('dashboard/', include('dashboard.urls')),
     path('employees/', include('employees.urls')),
-    path('recipes/', include('recipes.urls'))
+    path('recipes/', include('recipes.urls')),
+
+    #blog
+    path('dashboard/blogs.html', blogs, name="blogs"),
+    path('dashboard/blogs/create.html', create, name='blog_create')
 ]
