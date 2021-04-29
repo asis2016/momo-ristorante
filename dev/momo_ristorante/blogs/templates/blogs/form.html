@@ -57,7 +57,7 @@
             </form>
             {% endcomment %}
 
-            <form method="post">
+            <form enctype="multipart/form-data" method="post">
                 {% csrf_token %}
                 {{ form | crispy }}
                 <input type="submit" value="Save">
