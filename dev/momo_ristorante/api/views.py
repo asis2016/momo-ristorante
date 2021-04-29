@@ -5,9 +5,10 @@
 from rest_framework import generics, permissions
 
 from blogs.models import Blog
+from bookings.models import Booking
 from recipes.models import Recipe
 from .permissions import IsAuthorOrReadOnly
-from .serializers import BlogSerializer, RecipeSerializer
+from .serializers import BlogSerializer, BookingSerializer, RecipeSerializer
 
 
 class DetailBlog(generics.RetrieveAPIView):
@@ -17,9 +18,21 @@ class DetailBlog(generics.RetrieveAPIView):
 
 
 class ListBlog(generics.ListAPIView):
-    """ List or blog posts as List API View. """
+    """ List blog posts as List API View. """
     queryset = Blog.objects.all()
     serializer_class = BlogSerializer
+
+
+class DetailBooking(generics.RetrieveUpdateDestroyAPIView):
+    """ A single booking as Retrieve Update Destroy API View. """
+    queryset = Booking.objects.all()
+    serializer_class = BookingSerializer
+
+
+class ListBooking(generics.ListCreateAPIView):
+    """ List bookings as List Create API View. """
+    queryset = Booking.objects.all()
+    serializer_class = BookingSerializer
 
 
 class DetailRecipe(generics.RetrieveUpdateDestroyAPIView):

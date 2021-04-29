@@ -4,10 +4,8 @@
     Blog consists of many articles.
     A blog is created by an Employee (employees.models) and it is publicly visible.
 """
-from django.db import models
 from django.contrib.auth.models import User
-
-from employees.models import Employee
+from django.db import models
 
 
 class Blog(models.Model):

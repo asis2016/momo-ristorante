@@ -41,42 +41,34 @@
                 font-size: 3.5rem;
             }
         }
+
+        main {
+            height: 100vh;
+        }
     </style>
     <!-- Custom styles for this template -->
     <link href="{% static 'dashboard/css/style.css' %}" rel="stylesheet"/>
 </head>
 <body>
-<!-- Header starts -->
-<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">
-        MOMO Ristorant
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">
+        YOYO
     </a>
-    <button aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation"
-            class="navbar-toggler position-absolute d-md-none collapsed" data-bs-target="#sidebarMenu"
-            data-bs-toggle="collapse"
-            type="button">
-        <span class="navbar-toggler-icon"></span>
-    </button>
     <input aria-label="Search" class="form-control form-control-dark w-100" placeholder="Search" type="text">
-
-    {% comment %} Authenticated? {% endcomment %}
     <ul class="navbar-nav px-3">
-        {% if user.is_authenticated %}
         <li class="nav-item text-nowrap">
-            <a class="nav-link" href="{% url 'dashboard_logout' %}">
-                Sign out
-            </a>
+            <a class="nav-link" href="#">Sign out</a>
         </li>
-        {% endif %}
     </ul>
-</header>
-<!-- Header ends -->
+</nav>
+
 <div class="container-fluid">
     <div class="row">
         {% include './nav.html' %}
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             {% block content %}
             {% endblock %}
+
         </main>
     </div>
 </div>

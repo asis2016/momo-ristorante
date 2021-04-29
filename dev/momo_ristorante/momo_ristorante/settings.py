@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'blogs',
     'bookings',
     'dashboard',
-    'employees',
     'recipes',
     'website',
 

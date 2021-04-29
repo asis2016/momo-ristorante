@@ -6,6 +6,7 @@
 from rest_framework import serializers
 
 from blogs.models import Blog
+from bookings.models import Booking
 from recipes.models import Recipe
 
 
@@ -14,6 +15,14 @@ class BlogSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Blog
+        fields = '__all__'
+
+
+class BookingSerializer(serializers.ModelSerializer):
+    """ Booking model serializiers. """
+
+    class Meta:
+        model = Booking
         fields = '__all__'
 
 

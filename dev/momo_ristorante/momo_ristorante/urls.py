@@ -13,15 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
 from django.conf import settings
-from django.views.static import serve
 from django.conf.urls import url
+from django.contrib import admin
 from django.urls import path, include
-from django.conf import urls
+from django.views.static import serve
 
 from website.views import home, underconstruction, reference
-from blogs.views import blogs, create
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,20 +32,19 @@ urlpatterns = [
     path('website/', include('website.urls')),
     path('', home, name='home'),
     path('dashboard/', include('dashboard.urls')),
-    path('employees/', include('employees.urls')),
 
-    #recipes
+    # recipes
     path('dashboard/recipes/', include('recipes.urls')),
 
-    #blog
+    # blog
     path('dashboard/blog/', include('blogs.urls')),
 
-    #api
+    # api
     path('api/v1/', include('api.urls')),
     path('api-auth/', include('rest_framework.urls')),
 ]
 
 if settings.DEBUG:
-	urlpatterns += [
-	    url(r'media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT})
-	]
+    urlpatterns += [
+        url(r'media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT})
+    ]

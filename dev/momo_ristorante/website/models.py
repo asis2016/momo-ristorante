@@ -1,14 +1,12 @@
+"""
+    website/models.py
+    _________________
+"""
 from django.db import models
 
-class Booking(models.Model):
-    name = models.TextField()
-    email = models.TextField()
-    phone = models.TextField()
-    person = models.IntegerField()
-    datestamp = models.DateTimeField()
-    created_at = models.DateTimeField(auto_now_add=True)
 
 class Setting(models.Model):
+    """ General settings of a website as of v.1.0. """
     siteurl = models.TextField()
     blogname = models.TextField()
     blogdescription = models.TextField(blank=True)
@@ -20,7 +18,9 @@ class Setting(models.Model):
     def __str__(self):
         return f"{self.siteurl}"
 
+
 class Homepage(models.Model):
+    """ Homepage settings as of v.1.0. """
     homepage_id = models.TextField(max_length=10, primary_key=True)
     title = models.TextField(max_length=100)
     subtitle = models.TextField(blank=True)
@@ -29,4 +29,4 @@ class Homepage(models.Model):
     image_url = models.TextField(blank=True)
 
     def __str__(self):
-        return f"{self.title} at {self.image_url}"
+        return f'{self.title} at {self.image_url}'

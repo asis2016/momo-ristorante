@@ -32,8 +32,6 @@ def endpoints(request):
         '/api/v1/blogs/1',
         '/api/v1/bookings',
         '/api/v1/bookings/1',
-        '/api/v1/employees',
-        '/api/v1/employees/1',
         '/api/v1/recipes',
         '/api/v1/recipes/1',
     ]
