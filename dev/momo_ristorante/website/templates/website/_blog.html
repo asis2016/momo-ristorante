@@ -11,7 +11,7 @@
                 <div class="card">
                     <img alt="{{ blog.title }}"
                          class="card-img-top"
-                         src="{% static 'website/images/' %}{{ post.image_url }}"/>
+                         src="{{ post.image }}"/>
                     <div class="card-body">
                         <a href="{% url 'blog_detail' post.id %}">
                             <h5>{{ post.title }}</h5>
@@ -20,6 +20,8 @@
                     </div>
                 </div>
             </div>
+            {% empty %}
+            <div>No record found.</div>
             {% endfor %}
         </div>
     </div>

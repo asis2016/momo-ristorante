@@ -1,43 +1,48 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-            name="description"
-            content="Bootstrap 4 shoping template. The template for free."
-        />
-        <meta name="language" content="EN" />
-        <meta
-            name="keywords"
-            content="Bootstrap, Bootstrap 4, Ecommerce Template, Free Bootstrap 4 Template"
-        />
-        <meta name="author" content="Ashish Singh Maharjan" />
-        <meta name="designer" content="Ashish Singh Maharjan" />
-        <meta name="url" content="http://www.asm.com.np" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" type="image/png" href="{% static '/images/icons/favicon.ico' %}" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="Bootstrap 4 shoping template. The template for free." name="description"/>
+    <meta content="EN" name="language"/>
+    <meta content="Bootstrap, Bootstrap 4, Ecommerce Template, Free Bootstrap 4 Template" name="keywords"/>
+    <meta content="Ashish Singh Maharjan" name="author"/>
+    <meta content="Ashish Singh Maharjan" name="designer"/>
+    <meta content="http://www.asm.com.np" name="url"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 
-        <!-- Bootstrap core CSS -->
-        <link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
-        <link href="{% static '/css/main.css' %}" rel="stylesheet" type="text/css" />
+    {% block page_meta %}
+    {% endblock %}
 
-        <!-- Fontawesome -->
-        <link   rel="stylesheet" 
-                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
-                integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" 
-                crossorigin="anonymous" />
+    {# Vendor #}
+    <link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <!--Slick-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" rel="stylesheet"
+          type="text/css"/>
 
-        {% block head %}
-        {% endblock %}
+    {# Styles #}
+    <link href="{% static '/css/main.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'website/css/style.css'%}" rel="stylesheet" type="text/css"/>
 
-        <title>{% block title %}{% endblock %}</title>
-    </head>
+    <link href="{% static '/images/icons/favicon.ico' %}" rel="icon" type="image/png"/>
+
+    {% block head %}
+    {% endblock %}
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
 <body>
-    {% block content %}
-    {% endblock %}
+{% include './shared/nav.html' %}
 
-    {% block scripts %}
-    {% endblock %}
+{% block content %}
+{% endblock %}
+
+{% include './shared/footer.html' %}
+
+{% block scripts %}
+{% endblock %}
 </body>
 </html>

@@ -102,7 +102,7 @@
                         </a>
                     </li>
                     {% if user.is_authenticated %}
-                        <li><a href="{% url 'dashboard' %}">My Account</a></li>
+                        <li><a href="{% url 'admin_url_dashboard' %}">My Account</a></li>
                     {% else %}
                         <li><a href="{% url 'dashboard_login' %}">Login</a></li>
                     {% endif %}
