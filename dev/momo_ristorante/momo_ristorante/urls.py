@@ -14,7 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf import settings
+from django.views.static import serve
+from django.conf.urls import url
 from django.urls import path, include
+from django.conf import urls
 
 from website.views import home, underconstruction, reference
 from blogs.views import blogs, create
@@ -31,9 +35,19 @@ urlpatterns = [
     path('', home, name='home'),
     path('dashboard/', include('dashboard.urls')),
     path('employees/', include('employees.urls')),
-    path('recipes/', include('recipes.urls')),
+
+    #recipes
+    path('dashboard/recipes/', include('recipes.urls')),
 
     #blog
-    path('dashboard/blogs.html', blogs, name="blogs"),
-    path('dashboard/blogs/create.html', create, name='blog_create')
+    path('dashboard/blog/', include('blogs.urls')),
+
+    #api
+    path('api/v1/', include('api.urls')),
+    path('api-auth/', include('rest_framework.urls')),
 ]
+
+if settings.DEBUG:
+	urlpatterns += [
+	    url(r'media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT})
+	]

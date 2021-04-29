@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 from employees.models import Employee
 
@@ -10,6 +11,7 @@ class Recipe(models.Model):
         ('TB', 'Tibetan'),
         ('NP', 'Nepalese')
     )
+    User = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
     excerpt = models.CharField(max_length=50, blank=True)
     content = models.TextField(blank=True)

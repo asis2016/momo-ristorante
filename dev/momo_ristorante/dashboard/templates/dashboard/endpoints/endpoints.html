@@ -1,0 +1,20 @@
+{% extends 'dashboard/base.html' %}
+
+{% block content %}
+<section>
+    <h2 class="pt-3 pb-3 border-bottom">REST API Endpoints</h2>
+    <div class="row pt-3">
+        <div class="col">
+            <div class="list-group">
+                {% for endpoint in endpoints %}
+                <a class="list-group-item list-group-item-action"
+                   href="http://127.0.0.1:8000{{ endpoint }}"
+                   target="_blank">
+                    {{ endpoint }}
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

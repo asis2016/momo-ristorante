@@ -17,3 +17,6 @@ def create(request):
     else:
         form = EmployeeForm()
     return render(request, 'employees/form.html', {'form': form})
+
+def lists(request):
+    return HttpResponse('This is employee lists')
