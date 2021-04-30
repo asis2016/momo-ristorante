@@ -1,5 +1,6 @@
 **/.idea/
 **/venv/
+**/env/
 **/__pycache__/
 
 **/node_modules/
@@ -7,6 +8,7 @@
 **/jupyter/
 *.pyc
 
-dev/jupyter/
-/dev/database
-/dev/script.py
+backend/jupyter/
+/backend/database
+/backend/script.py
+/backend/env/
