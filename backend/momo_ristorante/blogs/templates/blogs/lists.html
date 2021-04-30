@@ -29,7 +29,7 @@
                 <tr>
                     <th scope="row">{{ blog_post.id }}</th>
                     <td>
-                        <a href="#">
+                        <a href="{% url 'admin_url_blog_detail' blog_post.id %}">
                             {{ blog_post.title }}
                         </a>
                     </td>
