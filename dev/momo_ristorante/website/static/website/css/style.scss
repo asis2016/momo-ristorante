@@ -14,6 +14,7 @@ $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
 .btn-main {
   background-color: $color_primary_dark;
   color: #fff;
+
   &:hover {
     background-color: $color_primary;
     color: #fff;
@@ -23,6 +24,7 @@ $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
 .btn-secondary {
   background-color: $color_secondary;
   color: #fff;
+
   &:hover {
     background-color: $color_secondary_dark;
     color: #fff;
@@ -33,14 +35,13 @@ $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
   font-family: "Roboto", serif;
 }
 
-//MASTER HEADER
+// MASTER HEADER
 .master-head {
   position: relative;
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
-    url("/static/website/images/background2.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url("/static/website/images/background2.jpg");
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -61,8 +62,8 @@ $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
   h1,
   h2 {
     background: -webkit-linear-gradient(
-      rgba(255, 255, 255, 1),
-      rgba(255, 255, 255, 0.8)
+                    rgba(255, 255, 255, 1),
+                    rgba(255, 255, 255, 0.8)
     );
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -113,6 +114,7 @@ $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
 #mainNav {
   letter-spacing: 0.0625em;
   background-color: transparent;
+
   .fa-globe {
     font-size: 2rem;
   }
@@ -159,11 +161,13 @@ $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
 
     .dropdown-item {
       color: #fff;
+
       &:hover {
         color: $color_primary;
         text-decoration: underline;
       }
     }
+
     .dropdown-divider {
       border-top: 1px solid rgb(255 255 255 / 20%);
     }
@@ -250,7 +254,7 @@ $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
 .jumbotron2 {
   border-bottom: $border_bottom;
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-    url("/static/website/images/slide2.jpg");
+  url("/static/website/images/slide2.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -304,6 +308,7 @@ $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
     p {
       color: #fff;
     }
+
     p {
       margin-bottom: 0;
     }
@@ -316,6 +321,7 @@ $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding-bottom: 6rem;
   background-color: $color_primary;
   color: #fff;
+
   h2,
   p {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -373,13 +379,16 @@ $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding-top: 6rem;
   padding-bottom: 6rem;
   border-bottom: 1px solid $color_secondary;
+
   img {
     height: 120px;
     width: 120px;
   }
+
   .fa {
     font-size: 2rem;
   }
+
   .carousel-inner {
     width: 90%;
     left: 7%;
@@ -395,11 +404,13 @@ $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
 //FEATURETTE
 .section-featurette {
   background-color: $bg_main;
+
   .container {
     padding: 5rem 0;
 
     .col-one {
       padding-right: 5rem;
+
       h2,
       p {
         color: $color_secondary;
@@ -426,6 +437,7 @@ $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
     }
   }
 }
+
 //BOOK TABLE
 .book-table {
   background-color: $bg_main;
@@ -513,16 +525,20 @@ $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
   .social a:hover {
     text-decoration: none;
   }
+
   .footer-brand {
     img {
       height: 80px;
     }
+
     .brand {
       font-family: "Cardo", serif;
       font-size: 1.5rem;
       font-weight: 700;
     }
+
     font-size: 2rem;
+
     li {
       padding-right: 10px;
       display: inline;
@@ -543,6 +559,31 @@ $border_bottom: 1px solid rgba(0, 0, 0, 0.2);
   .footer-1 {
     .designer {
       float: right;
+    }
+  }
+}
+
+// Common
+.common-master-head {
+  min-height: 400px;
+}
+
+.common-container {
+  h5 {
+    a {
+      color: #000;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .common-master-head {
+    height: 400px;
+  }
+
+  .common-master-head {
+    h1 {
+      line-height: 8rem;
     }
   }
 }

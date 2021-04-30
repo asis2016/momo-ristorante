@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link href="{% static 'website/css/style.css' %}" rel="stylesheet">
+
+<style>
+    .common-master-head {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
+        url("/static/website/images/background3.jpg");
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;
+    }
+
+    .col-4 {
+        text-align: center;
+    }
+</style>
+{% endblock %}
+
+{% block title %} About us {% endblock %}
+
+{% block content %}
+<header class="master-head common-master-head">
+    <div class="container d-flex h-100 align-items-center">
+        <div class="mx-auto text-center">
+            <h1 class="site">About us</h1>
+        </div>
+    </div>
+</header>
+
+<section class="container py-5 common-container">
+    <div class="row py-5">
+        {% for post in posts %}
+        <div class="col-4">
+            <img alt=""
+                 class="bd-placeholder-img rounded-circle"
+                 src="{% static 'website/images/'  %}{{ post.image }}"
+                 width="140">
+            <h2 class="pt-4">{{ post.title }}</h2>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit." </p>
+            <p>
+                <a class="btn btn-secondary" href="{% url 'under_construction' %}">Read more »</a>
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

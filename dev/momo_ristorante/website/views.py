@@ -3,8 +3,6 @@
     ================
     Main entry view for 'public'.
 """
-__author__ = "Ashish Singh Maharjan"
-
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 
@@ -29,28 +27,20 @@ def datas():
     return data
 
 
-def home(request):
-    """ Return render or HttpResponse for website > home. """
-    if request.user.is_authenticated:
-        return render(request, "website/index.html", datas())
-    else:
-        return HttpResponse('you are not authenticated!')
-
-
-def reference(request):
-    """ Return all external references used for the developing this project. """
-    return render(request, 'references/reference.html', datas())
-
-
-def underconstruction(request):
-    """ Return "not developed" pages. """
-    return render(request, 'under_construction/under_construction.html')
+def about(request):
+    """ Return about page. """
+    posts = [
+        {'title': 'Flabio Gustava', 'image': 'about-3.png'},
+        {'title': 'Maria Smith', 'image': 'about-2.png'},
+        {'title': 'Johnny Harris', 'image': 'about-1.png'}
+    ]
+    return render(request, 'about/about.html', {'posts': posts})
 
 
 def blogs(request):
     """ Return blog archive. """
     blog_posts = Blog.objects.all()
-    return render(request, 'website/blog.html', {
+    return render(request, 'blogs/blog.html', {
         'blog_posts': blog_posts
     })
 
@@ -62,15 +52,33 @@ def blog_detail(request, id):
     :return: render()
     """
     blog_id = get_object_or_404(Blog, pk=id)
-    return render(request, 'website/blog_detail.html', {
+    return render(request, 'blogs/blog_detail.html', {
         'blog': blog_id
     })
+
+
+def contact(request):
+    """ Return a contact page. """
+    return render(request, 'contact/contact.html')
+
+
+def home(request):
+    """ Return render or HttpResponse for website > home. """
+    return render(request, "website/index.html", datas())
+
+
+def my_account(request):
+    """ todo my account page with quick stat. """
+    if request.is_authenticated:
+        return HttpResponse('Yo this is my account. Quick stat page.')
+    else:
+        return HttpResponse('You are not authorized.')
 
 
 def recipe(request):
     """ Return gallery arhive. """
     posts = Recipe.objects.all()
-    return render(request, 'website/recipe.html', {
+    return render(request, 'recipes/recipe.html', {
         'posts': posts
     })
 
@@ -78,14 +86,24 @@ def recipe(request):
 def recipe_detail(request, id):
     """ Return single page for a gallery. """
     post = get_object_or_404(Recipe, pk=id)
-    return render(request, 'website/recipe_detail.html', {
+    return render(request, 'recipes/recipe_detail.html', {
         'post': post
     })
 
 
-def about(request):
-    """ Return about page. """
-    return HttpResponse('Yo this is about page.')
+def reference(request):
+    """ Return all external references used for the developing this project. """
+    return render(request, 'references/reference.html', datas())
+
+
+def story(request):
+    """ Return Our story page. """
+    return render(request, 'story/our-story.html')
+
+
+def underconstruction(request):
+    """ Return "not developed" pages. """
+    return render(request, 'under_construction/under_construction.html')
 
 # def contact(request, id):
 #    return HttpResponse('Yo this is contact page ' + str(id))

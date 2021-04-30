@@ -3,7 +3,7 @@
     ------------
 """
 from django.contrib.auth import get_user_model
-from rest_framework import generics, permissions, viewsets
+from rest_framework import generics, permissions
 
 from blogs.models import Blog
 from bookings.models import Booking
@@ -12,20 +12,18 @@ from .permissions import IsAuthorOrReadOnly
 from .serializers import BlogSerializer, BookingSerializer, RecipeSerializer, UserSerializer
 
 
-# Blog
-class BlogDetail(generics.RetrieveAPIView):
+class DetailBlog(generics.RetrieveAPIView):
     """ A single blog post as Retrieve API View. """
     queryset = Blog.objects.all()
     serializer_class = BlogSerializer
 
 
-class BlogList(generics.ListAPIView):
+class ListBlog(generics.ListAPIView):
     """ List blog posts as List API View. """
     queryset = Blog.objects.all()
     serializer_class = BlogSerializer
 
 
-# Booking
 class DetailBooking(generics.RetrieveUpdateDestroyAPIView):
     """ A single booking as Retrieve Update Destroy API View. """
     queryset = Booking.objects.all()
@@ -52,20 +50,25 @@ class DetailRecipe(generics.RetrieveUpdateDestroyAPIView):
 
 class ListRecipe(generics.ListCreateAPIView):
     """
-    List of recipes as List Create API view.
+    List of recipes as List Createve API view.
     Option: ListAPIView or ListCreateAPIView
     """
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer
 
 
-# User ViewSet
-class UserViewSet(viewsets.ModelViewSet):
+# User
+class UserList(generics.ListAPIView):
     """
-    User view set: combining "UserList and UserDetail."
-    See: _views.old.py -> UserList and User Detail for "separate views."
+    List of users as List API View.
     """
-    # permission_classes = (IsAuthorOrReadOnly,) -> Note the difference.
-    # permission_classes = ()
+    queryset = get_user_model().objects.all()
+    serializer_class = UserSerializer
+
+
+class UserDetail(generics.RetrieveAPIView):
+    """
+    List of users as Retrieve API View.
+    """
     queryset = get_user_model().objects.all()
     serializer_class = UserSerializer

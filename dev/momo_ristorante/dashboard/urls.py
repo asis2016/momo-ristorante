@@ -8,14 +8,10 @@ urlpatterns = [
 
     path('index.html', views.index, name='admin_url_dashboard'),
     # or,
-    # url(r'index$', index, name = 'dashboard_index' ),
+    # url(r'index$', index, name = 'admin_url_dashboard' ),
 
     url(r'blog$', views.blog, name='dashboard_blog'),
 
-    url(r'login$',
-        LoginView.as_view(template_name='dashboard/login.html'),
-        name='dashboard_login'
-        ),
 
     url(r'logout$',
         LogoutView.as_view(),

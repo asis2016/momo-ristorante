@@ -35,8 +35,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     # local
+    'accounts',
     'blogs',
     'bookings',
     'dashboard',
@@ -47,6 +49,15 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'rest_framework',
+    'rest_framework.authtoken',
+    'rest_framework_swagger',
+    'rest_auth',
+    'rest_auth.registration',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
     'corsheaders',
 ]
 
@@ -139,9 +150,9 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # LOGIN settings
-LOGIN_REDIRECT_URL = 'dashboard_index'
+LOGIN_REDIRECT_URL = 'admin_url_dashboard'
 LOGOUT_REDIRECT_URL = 'home'
-LOGIN_URL = 'dashboard_login'
+LOGIN_URL = 'login'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 # CUSTOM SETTINGS
@@ -152,7 +163,20 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
         # 'rest_framework.permissions.AllowAny', - for everything!
-    ]
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework.authentication.BasicAuthentication'
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+}
+
+# SWAGGER
+SWAGGER_SETTINGS = {
+    'LOGIN_URL': 'rest_framework:login',
+    'LOGOUT_URL': 'rest_framework:logout',
+    'is_authenticated': True,
 }
 
 # CORS ORIGIN
@@ -160,3 +184,6 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'http://localhost:8000',
 )
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+SITE_ID = 1

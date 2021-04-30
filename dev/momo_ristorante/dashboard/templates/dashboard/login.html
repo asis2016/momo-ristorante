@@ -4,7 +4,7 @@
 {% block content %}
     <form role="form" 
     method = "post"
-    action="{% url 'dashboard_login' %}">
+    action="{% url 'login' %}">
     {% csrf_token %}
         {{ form | crispy }}
         <button type="submit">Sign in</button>

@@ -471,5 +471,22 @@
     float: right;
   }
 }
+.common-master-head {
+  min-height: 400px;
+}
+
+.common-container h5 a {
+  color: #000;
+}
+
+@media (min-width: 992px) {
+  .common-master-head {
+    height: 400px;
+  }
+
+  .common-master-head h1 {
+    line-height: 8rem;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

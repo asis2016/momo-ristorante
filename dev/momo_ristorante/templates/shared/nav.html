@@ -27,7 +27,7 @@
                 </li>
                 <li>
                     <a class="nav-link" href="{% url 'recipe' %}">
-                        Gallery
+                        Recipes
                     </a>
                 </li>
                 <li class="nav-item dropdown">
@@ -41,18 +41,17 @@
                         About us
                     </a>
                     <div aria-labelledby="navbarDropdown" class="dropdown-menu">
-                        <a class="dropdown-item" href="#featurette">Mo:Mo: of the Day</a>
+                        <a class="dropdown-item" href="{% url 'home' %}#featurette">Mo:Mo: of the Day</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#our-story">Our Story</a>
+                        <a class="dropdown-item" href="{% url 'story' %}">Our Story</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#newsletter">Newsletter</a>
+                        <a class="dropdown-item" href="{% url 'about' %}">About us</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#contact">Contact us</a
-                        >
+                        <a class="dropdown-item" href="{% url 'contact' %}">Contact us</a>
                     </div>
                 </li>
                 <li>
-                    <a class="nav-link" href="#book-table"> Book a Table </a>
+                    <a class="nav-link" href="{% url 'home' %}#book-table"> Book a Table </a>
                 </li>
                 {% if user.is_authenticated %}
                 <li>
