@@ -13,7 +13,7 @@ urlpatterns = [
     # blog
     path('blog', blog_views.BlogListView.as_view(), name='admin_blog'),
     path('blog/create', blog_views.create, name='admin_url_blog_create'),
-    path('blog/<int:pk>', blog_views.BlogDetailView.as_view(), name='admin_url_blog_detail'),
+    path('blog/<int:pk>', blog_views.BlogDetailView.as_view(), name='admin_blog_detail'),
     path('blog/<int:pk>/edit/', blog_views.BlogUpdateView.as_view(), name='admin_blog_update'),
     path('blog/<int:pk>/delete/', blog_views.BlogDeleteView.as_view(), name='admin_blog_delete'),
 

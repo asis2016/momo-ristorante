@@ -17,14 +17,13 @@ class Blog(models.Model):
     title = models.CharField(max_length=50)
     excerpt = models.TextField(max_length=100, blank=True)
     content = models.TextField(blank=True)
-    image = models.ImageField(upload_to='static/images/blogs/',
+    image = models.ImageField(upload_to='',
                               default='media/default.png',
                               blank=True)
-    image_url = models.TextField(blank=True, max_length=20)
     create_date = models.DateField(blank=True)
 
     def __str__(self):
         return str(self.title)
 
     def get_absolute_url(self):
-        return reverse('admin_url_blog_detail', args=[str(self.id)])
+        return reverse('admin_blog_detail', args=[str(self.id)])

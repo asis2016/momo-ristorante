@@ -17,8 +17,8 @@ def datas():
     Read the documentation for the :meth: `home` method.
     """
     data = {
-        "blog": Blog.objects.all(),
-        "recipes": Recipe.objects.all(),
+        "blog": Blog.objects.all()[:3],
+        "recipes": Recipe.objects.all()[:8],
         'featurette': Homepage.objects.get(pk='featurette'),
         "homepage": Homepage.objects.all(),
         "jumbotron": Homepage.objects.get(pk='jumbotron'),

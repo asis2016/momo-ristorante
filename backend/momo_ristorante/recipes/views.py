@@ -12,3 +12,4 @@ class RecipeListView(ListView):
     model = Recipe
     template_name = 'recipes/lists.html'
     context_object_name = 'recipes'
+

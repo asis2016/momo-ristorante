@@ -12,6 +12,7 @@
             background-attachment: scroll;
             background-size: cover;
         }
+
         .card {
             margin-bottom: 3rem;
         }
@@ -54,7 +55,10 @@
                                         View
                                     </a>
                                     {% if user.is_authenticated %}
-                                        <button class="btn btn-sm btn-outline-secondary" type="button">Edit</button>
+                                        <a href="#"
+                                           class="btn btn-sm btn-outline-secondary" type="button">
+                                            Edit
+                                        </a>
                                     {% endif %}
                                 </div>
                                 <small class="text-muted">9 mins</small>

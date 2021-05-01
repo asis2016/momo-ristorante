@@ -4,9 +4,9 @@
 """
 
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import UpdateView, DeleteView
-from django.urls import reverse_lazy
 
 from .forms import BlogForm
 from .models import Blog
@@ -21,9 +21,15 @@ class BlogDetailView(DetailView):
 
 class BlogListView(ListView):
     """ Return a list of blog for administration. """
+    app_header = {
+        'title': 'Blogs',
+        'admin_url_blog_create': 'admin_url_blog_create'
+    }
     model = Blog
+    paginate_by = 4
     template_name = 'blogs/blog.html'
     context_object_name = 'blog_posts'
+    extra_context = app_header
 
 
 def create(request):
@@ -42,7 +48,7 @@ class BlogUpdateView(UpdateView):
     model = Blog
     template_name = 'blogs/edit.html'
     context_object_name = 'blog_post'
-    fields = ['title','excerpt', 'content', 'image']
+    fields = ['title', 'excerpt', 'content', 'image']
 
 
 class BlogDeleteView(DeleteView):

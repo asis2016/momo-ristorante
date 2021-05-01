@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf import settings
 from django.conf.urls import url
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth.views import LoginView
 from django.urls import path, include
@@ -29,34 +30,33 @@ schema_view = get_schema_view(title=API_TITLE)
 schema_view_swagger = get_swagger_view(title=API_TITLE)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+                  path('admin/', admin.site.urls),
 
-    # account - login
-    path('account/login.html', LoginView.as_view(template_name='accounts/login.html'), name='login'),
+                  # account - login
+                  path('account/login.html', LoginView.as_view(template_name='accounts/login.html'), name='login'),
 
-    # dashboard
-    path('dashboard/', include('dashboard.urls')),
+                  # dashboard
+                  path('dashboard/', include('dashboard.urls')),
 
-    # api
-    path('api/v1/', include('api.urls')),
-    path('api-auth/', include('rest_framework.urls')),
-    path('api/v1/rest-auth/', include('rest_auth.urls')),
-    path('api/v1/rest-auth/registration/', include('rest_auth.registration.urls')),
+                  # api
+                  path('api/v1/', include('api.urls')),
+                  path('api-auth/', include('rest_framework.urls')),
+                  path('api/v1/rest-auth/', include('rest_auth.urls')),
+                  path('api/v1/rest-auth/registration/', include('rest_auth.registration.urls')),
 
-    # docs
-    path('docs/', include_docs_urls(title=API_TITLE, description=API_DESCRIPTION)),
+                  # docs
+                  path('docs/', include_docs_urls(title=API_TITLE, description=API_DESCRIPTION)),
 
-    # schema
-    path('schema/', schema_view),
+                  # schema
+                  path('schema/', schema_view),
 
-    # schema-swagger
-    path('swagger-docs/', schema_view_swagger),
+                  # schema-swagger
+                  path('swagger-docs/', schema_view_swagger),
 
-    # website
-    path('', include('website.urls'))
+                  # website
+                  path('', include('website.urls'))
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += [
+    url(r'media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT})
 ]
-
-if settings.DEBUG:
-    urlpatterns += [
-        url(r'media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT})
-    ]

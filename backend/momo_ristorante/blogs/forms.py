@@ -14,7 +14,7 @@ class BlogForm(ModelForm):
     class Meta:
         model = Blog
         # fields = '__all__'
-        fields = ['title', 'excerpt', 'content','image', 'image_url', 'create_date']
+        fields = ['title', 'excerpt', 'content','image', 'create_date']
         widgets = {
             'title': EmailInput(attrs={
                 'class': 'form-control',
