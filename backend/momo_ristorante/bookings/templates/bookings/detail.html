@@ -1,0 +1,98 @@
+{% extends 'dashboard/base.html' %}
+{% block title %} Booking detail {% endblock %}
+{% block content %}
+    <section>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h2> Booking detail</h2>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                <div class="btn-group me-2">
+                    <a class="btn btn-sm btn-outline-secondary" href="{% url 'admin_blog' %}" type="button">
+                        Go back
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-2">
+                Id
+            </div>
+            <div class="col-6">
+                {{ booking.id }}
+            </div>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-2">
+                Fullname
+            </div>
+            <div class="col-6">
+                {{ booking.fullname }}
+            </div>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-2">
+                Email
+            </div>
+            <div class="col-6">
+                {{ booking.email }}
+            </div>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-2">
+                Phone
+            </div>
+            <div class="col-6">
+                {{ booking.phone }}
+            </div>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-2">
+                Person
+            </div>
+            <div class="col-6">
+                {{ booking.person }}
+            </div>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-2">
+                Note
+            </div>
+            <div class="col-6">
+                {{ booking.note }}
+            </div>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-2">
+                Create date
+            </div>
+            <div class="col-6">
+                {{ booking.create_date }}
+            </div>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-2">
+                Status
+            </div>
+            <div class="col-6">
+                {{ booking.status }}
+            </div>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-2">
+                Modify data
+            </div>
+            <div class="col-6">
+                {{ booking.modify_date }}
+            </div>
+        </div>
+
+    </section>
+{% endblock %}

@@ -3,7 +3,7 @@
 {% block content %}
 <section>
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h2>Blog</h2>
+        <h2>Recipes</h2>
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
                 <a class="btn btn-sm btn-outline-secondary" href="{% url 'admin_url_blog_create' %}" type="button">
@@ -25,16 +25,16 @@
                 </tr>
                 </thead>
                 <tbody>
-                {% for blog_post in blog_posts %}
+                {% for recipe in recipes %}
                 <tr>
-                    <th scope="row">{{ blog_post.id }}</th>
+                    <th scope="row">{{ recipe.id }}</th>
                     <td>
-                        <a href="{% url 'admin_url_blog_detail' blog_post.id %}">
-                            {{ blog_post.title }}
+                        <a href="{% url 'admin_url_blog_detail' recipe.id %}">
+                            {{ recipe.title }}
                         </a>
                     </td>
-                    <td>{{ blog_post.create_date }}</td>
-                    <td>{{ blog_post.user }}</td>
+                    <td>{{ recipe.create_date }}</td>
+                    <td>{{ recipe.user }}</td>
                     <td class="action">
                         <span>Detail</span> | <span>Update</span> | <span>Delete</span>
                     </td>

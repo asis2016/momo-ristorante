@@ -1,5 +1,4 @@
 from django.urls import path
-from django.conf.urls import url
 
 from . import views
 
@@ -8,10 +7,5 @@ from . import views
                     () - will capture the value
 """
 urlpatterns = [
-    path('', views.BlogListView.as_view(), name='admin_url_blog'),
-    path('<int:pk>', views.BlogDetailView.as_view(), name='admin_url_blog_detail'),
-
     path('create.html', views.create, name='admin_url_blog_create'),
 ]
-
-

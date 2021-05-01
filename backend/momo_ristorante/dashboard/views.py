@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 menus = [
     {'title': 'Dashboard', 'url': 'admin_url_dashboard'},
-    {'title': 'Blog', 'url': 'admin_url_blog'},
+    {'title': 'Blog', 'url': 'admin_blog'},
     {'title': 'Create a blog post', 'url': 'admin_url_blog_create'},
     {'title': 'Employees', 'url': 'admin_url_employees'},
     {'title': 'Site', 'url': 'home'},

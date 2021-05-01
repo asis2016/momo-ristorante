@@ -5,10 +5,15 @@
 
 **/node_modules/
 
-**/jupyter/
+
 *.pyc
 
 backend/jupyter/
 /backend/database
 /backend/script.py
 /backend/env/
+
+**/jupyter/
+**/docs/
+
+**/design/

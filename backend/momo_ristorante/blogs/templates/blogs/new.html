@@ -1,13 +1,29 @@
 {% extends 'dashboard/base.html' %}
 {% load crispy_forms_tags %}
+{% block title %} Blog create {% endblock %}
 
 {% block content %}
-<section>
-    <h2 class="pt-3 pb-3 border-bottom">Blog</h2>
-    <div class="row pt-3">
-        <div class="col">
+    <section>
+         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h2>Add New Post</h2>
+        </div>
 
-            {% comment %}
+        <section class="menu-crud">
+            <div class="row">
+                <div class="col-6">
+                    <div class="menu-options pb-4">
+                        <a href="{% url 'admin_blog' %}" class="btn btn-sm btn-outline-secondary mr-2">
+                            Back to the list
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="row pt-3">
+            <div class="col">
+
+                {% comment %}
             <form method="post">
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -57,12 +73,12 @@
             </form>
             {% endcomment %}
 
-            <form enctype="multipart/form-data" method="post">
-                {% csrf_token %}
-                {{ form | crispy }}
-                <input type="submit" value="Save">
-            </form>
+                <form enctype="multipart/form-data" method="post">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <input type="submit" value="Save">
+                </form>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 {% endblock %}

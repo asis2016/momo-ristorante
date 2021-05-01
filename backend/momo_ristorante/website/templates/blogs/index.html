@@ -3,58 +3,49 @@
 
 {% block head %}
     <link href="{% static 'website/css/style.css' %}" rel="stylesheet">
-    <style>
-        .common-master-head {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
-            url("/static/website/images/background5.jpg");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: scroll;
-            background-size: cover;
-        }
-        .card {
-            margin-bottom: 3rem;
-        }
-    </style>
 {% endblock %}
 
-{% block title %} Recipe collections {% endblock %}
+{% block title %} Blog {% endblock %}
 
 {% block content %}
     <header class="master-head common-master-head">
         <div class="container d-flex h-100 align-items-center">
             <div class="mx-auto text-center">
-                <h1 class="site">Recipes</h1>
+                <h1 class="site">Blogs</h1>
             </div>
         </div>
     </header>
 
-    <section class="container common-container py-5">
-        <h2 class="pb-2 border-bottom">Recipe collections</h2>
+    <section class="container py-5 common-container">
+        <h2 class="pb-2 border-bottom">Blog</h2>
+        <!-- Blog starts -->
         <div class="row g-5 py-5">
-            {% for post in posts %}
+            {% for blog_post in blog_posts %}
                 <div class="col-3">
                     <div class="card shadow-sm">
                         <img alt="{{ blog_post.title }}"
                              class="card-img-top"
-                             src="{% static 'website/images/' %}{{ post.image_url }}">
+                             src="{% static 'website/images/' %}{{ blog_post.image_url }}">
                         <div class="card-body">
                             <h5>
-                                <a href="{% url 'recipe_detail' post.id %}">
-                                    {{ post.title }}
+                                <a href="{% url 'blog_detail' blog_post.id %}">
+                                    {{ blog_post.title }}
                                 </a>
                             </h5>
                             <p class="card-text">
-                                {{ post.excerpt }}
+                                {{ blog_post.excerpt }}
                             </p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <a class="btn btn-sm btn-outline-secondary"
-                                       href="{% url 'recipe_detail'  post.id %}">
+                                       href="{% url 'blog_detail'  blog_post.id %}">
                                         View
                                     </a>
                                     {% if user.is_authenticated %}
-                                        <button class="btn btn-sm btn-outline-secondary" type="button">Edit</button>
+                                        <a href="{% url 'admin_blog_update' blog_post.id %}"
+                                           class="btn btn-sm btn-outline-secondary" type="button">
+                                            Edit
+                                        </a>
                                     {% endif %}
                                 </div>
                                 <small class="text-muted">9 mins</small>
@@ -65,5 +56,5 @@
             {% endfor %}
         </div>
     </section>
-
 {% endblock %}
+

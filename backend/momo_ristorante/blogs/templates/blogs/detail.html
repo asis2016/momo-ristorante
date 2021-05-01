@@ -1,22 +1,101 @@
 {% extends 'dashboard/base.html' %}
 
+{% block head %}
+    <style>
+        .menu-options {
+            display: flex;
+        }
+    </style>
+{% endblock %}
+
+{% block title %} Blog detail {% endblock %}
 {% block content %}
     <section>
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h2>Blog</h2>
+            <h2>Blog detail</h2>
             <div class="btn-toolbar mb-2 mb-md-0">
                 <div class="btn-group me-2">
-                    <a class="btn btn-sm btn-outline-secondary" href="{% url 'admin_url_blog' %}" type="button">
-                        Go back
+                    <a class="btn btn-sm btn-outline-secondary" href="{% url 'admin_blog' %}" type="button">
+                        Export
                     </a>
                 </div>
             </div>
         </div>
 
+        <section class="menu-crud">
+            <div class="row">
+                <div class="col-6">
+                    <div class="menu-options pb-4">
+                        <a href="{% url 'admin_url_blog_create' %}" class="btn btn-sm btn-outline-secondary mr-2">
+                            Add new
+                        </a>
+                        <a href="{% url 'admin_blog_update' blog.id %}" class="btn btn-sm btn-outline-secondary mr-2">
+                            Edit
+                        </a>
+                        <a href="{% url 'admin_blog_delete' blog.id %}" class="btn btn-sm btn-outline-danger mr-2">
+                            Delete
+                        </a>
+                        <a href="{% url 'admin_blog' %}" class="btn btn-sm btn-outline-secondary mr-2">
+                            Back to the list
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <div class="row pt-3">
-            <div class="col">
+            <div class="col-2">
+                Id
+            </div>
+            <div class="col-6">
+                {{ blog.id }}
+            </div>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-2">
+                Title
+            </div>
+            <div class="col-6">
                 {{ blog.title }}
             </div>
         </div>
+
+        <div class="row pt-3">
+            <div class="col-2">
+                Excerpt
+            </div>
+            <div class="col-6">
+                {{ blog.excerpt }}
+            </div>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-2">
+                Content
+            </div>
+            <div class="col-6">
+                {{ blog.content }}
+            </div>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-2">
+                Image
+            </div>
+            <div class="col-6">
+                {{ blog.image }}
+            </div>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-2">
+                Create date
+            </div>
+            <div class="col-6">
+                {{ blog.create_date }}
+            </div>
+        </div>
+
     </section>
 {% endblock %}

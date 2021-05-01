@@ -40,7 +40,7 @@ def about(request):
 def blogs(request):
     """ Return blog archive. """
     blog_posts = Blog.objects.all()
-    return render(request, 'blogs/blog.html', {
+    return render(request, 'blogs/index.html', {
         'blog_posts': blog_posts
     })
 
@@ -85,9 +85,9 @@ def recipe(request):
 
 def recipe_detail(request, id):
     """ Return single page for a gallery. """
-    post = get_object_or_404(Recipe, pk=id)
-    return render(request, 'recipes/recipe_detail.html', {
-        'post': post
+    recipe = get_object_or_404(Recipe, pk=id)
+    return render(request, 'recipes/detail.html', {
+        'recipe': recipe
     })
 
 

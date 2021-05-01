@@ -3,7 +3,7 @@
     ------------
 """
 from django.contrib.auth import get_user_model
-from rest_framework import generics, permissions, viewsets
+from rest_framework import permissions, viewsets
 
 from blogs.models import Blog
 from bookings.models import Booking
@@ -12,54 +12,31 @@ from .permissions import IsAuthorOrReadOnly
 from .serializers import BlogSerializer, BookingSerializer, RecipeSerializer, UserSerializer
 
 
-# Blog
-class BlogDetail(generics.RetrieveAPIView):
-    """ A single blog post as Retrieve API View. """
-    queryset = Blog.objects.all()
-    serializer_class = BlogSerializer
-
-
-class BlogList(generics.ListAPIView):
-    """ List blog posts as List API View. """
-    queryset = Blog.objects.all()
-    serializer_class = BlogSerializer
-
-
-# Booking
-class DetailBooking(generics.RetrieveUpdateDestroyAPIView):
-    """ A single booking as Retrieve Update Destroy API View. """
-    queryset = Booking.objects.all()
-    serializer_class = BookingSerializer
-
-
-class ListBooking(generics.ListCreateAPIView):
-    """ List bookings as List Create API View. """
-    queryset = Booking.objects.all()
-    serializer_class = BookingSerializer
-
-
-# Recipe
-# todo refactor the name to RecipeList and RecipeDetail
-class DetailRecipe(generics.RetrieveUpdateDestroyAPIView):
+class BlogViewSet(viewsets.ModelViewSet):
     """
-    A single recipe as Retrieve Update Destroy API View.
-    Options: RetrieveAPIView or RetrieveUpdateDestroyAPIView
+    Blog view set.
+    """
+    queryset = Blog.objects.all()
+    serializer_class = BlogSerializer
+
+
+class BookingViewSet(viewsets.ModelViewSet):
+    """
+    Booking view set.
+    """
+    queryset = Booking.objects.all()
+    serializer_class = BookingSerializer
+
+
+class RecipeViewSet(viewsets.ModelViewSet):
+    """
+    Recipe view set: combining "UserList and UserDetail."
     """
     permission_classes = (IsAuthorOrReadOnly, permissions.IsAuthenticated,)
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer
 
 
-class ListRecipe(generics.ListCreateAPIView):
-    """
-    List of recipes as List Create API view.
-    Option: ListAPIView or ListCreateAPIView
-    """
-    queryset = Recipe.objects.all()
-    serializer_class = RecipeSerializer
-
-
-# User ViewSet
 class UserViewSet(viewsets.ModelViewSet):
     """
     User view set: combining "UserList and UserDetail."
