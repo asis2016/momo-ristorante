@@ -39,11 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     # local
-    'blogs',
-    'bookings',
-    'dashboard',
-    'recipes',
-    'website',
+    'blogs.apps.BlogsConfig',
+    'bookings.apps.BookingsConfig',
+    'dashboard.apps.DashboardConfig',
+    'recipes.apps.RecipesConfig',
+    'website.apps.WebsiteConfig',
 
     # 3rd party
     'crispy_forms',
@@ -78,7 +78,7 @@ ROOT_URLCONF = 'momo_ristorante.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates/')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -137,7 +137,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # new!
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # new!
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (

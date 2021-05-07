@@ -21,5 +21,5 @@ class BlogTests(TestCase):
             create_date='2020-2-1'
         )
 
-    #def test_post_detail_view(self):
-        #response = self.client.get('/blog/1/')
+    def test_post_detail_view(self):
+        response = self.client.get('/blog/1/')

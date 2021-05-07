@@ -3,12 +3,10 @@
     --------------
 """
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView, CreateView
 from django.views.generic.edit import UpdateView, DeleteView
 
-from .forms import BlogForm
 from .models import Blog
 
 
@@ -33,12 +31,14 @@ class BlogListView(LoginRequiredMixin, ListView):
 
 
 class BlogCreateView(LoginRequiredMixin, CreateView):
+    """ Create a new blog post. """
     model = Blog
     template_name = 'blogs/new.html'
     fields = '__all__'
 
 
 class BlogUpdateView(LoginRequiredMixin, UpdateView):
+    """ Updtas an exisitng blog post. """
     model = Blog
     template_name = 'blogs/edit.html'
     context_object_name = 'blog_post'
