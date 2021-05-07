@@ -47,15 +47,6 @@ INSTALLED_APPS = [
     # 3rd party
     'crispy_forms',
     'crispy_bootstrap5',
-    'rest_framework',
-    'rest_framework.authtoken',
-    'rest_framework_swagger',
-    'rest_auth',
-    'rest_auth.registration',
-
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
 
     'corsheaders',
 ]
@@ -170,18 +161,6 @@ REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
 }
 
-# SWAGGER
-SWAGGER_SETTINGS = {
-    'LOGIN_URL': 'rest_framework:login',
-    'LOGOUT_URL': 'rest_framework:logout',
-    'is_authenticated': True,
-}
-
-# CORS ORIGIN
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000',
-    'http://localhost:8000',
-)
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 SITE_ID = 1
