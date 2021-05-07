@@ -36,7 +36,6 @@ urlpatterns = [
                   path('login.html', LoginView.as_view(template_name='registration/login.html'), name='login'),
 
                   # dashboard
-                  path('dashboard/', include('dashboard.urls')),
 
                   # api
                   path('api/v1/', include('api.urls')),

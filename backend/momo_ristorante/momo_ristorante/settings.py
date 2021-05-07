@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     # local
     'blogs.apps.BlogsConfig',
     'bookings.apps.BookingsConfig',
-    'dashboard.apps.DashboardConfig',
     'recipes.apps.RecipesConfig',
     'website.apps.WebsiteConfig',
 
@@ -143,10 +142,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -154,7 +149,6 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # LOGIN settings
-LOGIN_REDIRECT_URL = 'admin_url_dashboard'
 LOGOUT_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'

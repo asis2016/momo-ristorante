@@ -5,6 +5,7 @@
 """
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
+from django.views.generic import TemplateView
 
 from blogs.models import Blog
 from recipes.models import Recipe
@@ -27,14 +28,18 @@ def datas():
     return data
 
 
-def about(request):
+class AboutView(TemplateView):
     """ Return about page. """
-    posts = [
-        {'title': 'Flabio Gustava', 'image': 'about-3.png'},
-        {'title': 'Maria Smith', 'image': 'about-2.png'},
-        {'title': 'Johnny Harris', 'image': 'about-1.png'}
-    ]
-    return render(request, 'about/about.html', {'posts': posts})
+
+    template_name = 'about/about.html'
+
+    def get_context_data(self, **kwargs):
+        posts = [
+            {'title': 'Flabio Gustava', 'image': 'about-3.png'},
+            {'title': 'Maria Smith', 'image': 'about-2.png'},
+            {'title': 'Johnny Harris', 'image': 'about-1.png'}
+        ]
+        return {'posts': posts}
 
 
 def blogs(request):
