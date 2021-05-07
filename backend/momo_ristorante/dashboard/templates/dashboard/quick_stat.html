@@ -1,15 +1,15 @@
 <div class="row pt-4">
-    {% for i in '1234' %}
+    {% for quick_stat in quick_stats  %}
     <div class="col-lg-3 col-md-6 col-sm-12">
         <div class="quick-stat">
             <div class="stat">
-                <h6>200</h6>
-                <p>New Orders</p>
+                <h6>{{ quick_stat.0 }}</h6>
+                <p>{{ quick_stat.1 }}</p>
             </div>
             <div class="icon">
                 a
             </div>
-            <a class="footer" href="#">
+            <a class="footer" href={% url quick_stat.2 %}>
                 More info <i class="fa fa-arrow-circle-right"></i>
             </a>
         </div>

@@ -2,24 +2,24 @@
     blogs/views.py
     --------------
 """
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from django.views.generic import DetailView, ListView
+from django.views.generic import DetailView, ListView, CreateView
 from django.views.generic.edit import UpdateView, DeleteView
 
 from .forms import BlogForm
 from .models import Blog
 
 
-class BlogDetailView(DetailView):
+class BlogDetailView(LoginRequiredMixin, DetailView):
     """ Return a detail of blog for administration. """
     model = Blog
     template_name = 'blogs/detail.html'
     context_object_name = 'blog'
 
 
-class BlogListView(ListView):
+class BlogListView(LoginRequiredMixin, ListView):
     """ Return a list of blog for administration. """
     app_header = {
         'title': 'Blogs',
@@ -32,26 +32,20 @@ class BlogListView(ListView):
     extra_context = app_header
 
 
-def create(request):
-    """ create a new blog. """
-    form = BlogForm(request.POST, request.FILES)
-    if request.method == 'POST':
-        if form.is_valid():
-            form.save(commit=True)
-        return redirect('blog_lists_url')
-    else:
-        form = BlogForm()
-    return render(request, 'blogs/new.html', {'form': BlogForm})
+class BlogCreateView(LoginRequiredMixin, CreateView):
+    model = Blog
+    template_name = 'blogs/new.html'
+    fields = '__all__'
 
 
-class BlogUpdateView(UpdateView):
+class BlogUpdateView(LoginRequiredMixin, UpdateView):
     model = Blog
     template_name = 'blogs/edit.html'
     context_object_name = 'blog_post'
     fields = ['title', 'excerpt', 'content', 'image']
 
 
-class BlogDeleteView(DeleteView):
+class BlogDeleteView(LoginRequiredMixin, DeleteView):
     """ A single post delete. """
     model = Blog
     template_name = 'blogs/delete.html'

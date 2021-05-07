@@ -33,7 +33,7 @@ urlpatterns = [
                   path('admin/', admin.site.urls),
 
                   # account - login
-                  path('account/login.html', LoginView.as_view(template_name='accounts/login.html'), name='login'),
+                  path('login.html', LoginView.as_view(template_name='registration/login.html'), name='login'),
 
                   # dashboard
                   path('dashboard/', include('dashboard.urls')),

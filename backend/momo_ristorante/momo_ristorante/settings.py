@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     # local
-    'accounts',
     'blogs',
     'bookings',
     'dashboard',

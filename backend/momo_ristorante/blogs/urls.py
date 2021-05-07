@@ -7,5 +7,5 @@ from . import views
                     () - will capture the value
 """
 urlpatterns = [
-    path('create.html', views.create, name='admin_url_blog_create'),
+    path('create.html', views.BlogCreateView.as_view(), name='admin_url_blog_create'),
 ]
