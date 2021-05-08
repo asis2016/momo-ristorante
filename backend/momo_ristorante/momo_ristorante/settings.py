@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
 
     'corsheaders',
+
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +63,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'momo_ristorante.urls'
@@ -164,3 +168,9 @@ REST_FRAMEWORK = {
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 SITE_ID = 1
+
+INTERNAL_IPS = [
+    # ...
+    '127.0.0.1',
+    # ...
+]

@@ -1,4 +1,6 @@
-from django.urls import path
+import debug_toolbar
+from django.conf import settings
+from django.urls import path, include
 
 from . import views
 
@@ -13,5 +15,7 @@ urlpatterns = [
     path('our-story.html', views.story, name='story'),
     path('reference.html', views.reference, name='references'),
     path('under-construction.html', views.underconstruction, name="under_construction"),
+
+    path('__debug__/', include(debug_toolbar.urls)),
 
 ]
