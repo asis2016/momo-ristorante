@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-v34h48=*da_@x!pa)8w1u2x38o$a&yxi!9f(2@s@68+t%ds!t_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 # Application definition
 INSTALLED_APPS = [
@@ -34,7 +34,6 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
@@ -47,23 +46,19 @@ INSTALLED_APPS = [
     # 3rd party
     'crispy_forms',
     'crispy_bootstrap5',
-
-    'corsheaders',
-
     'debug_toolbar',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-    'corsheaders.middleware.CorsMiddleware',  # 3rd party
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
+    # debug toolbar
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
@@ -84,8 +79,6 @@ TEMPLATES = [
         },
     },
 ]
-
-WSGI_APPLICATION = 'momo_ristorante.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -143,32 +136,12 @@ STATICFILES_DIRS = (
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# LOGIN settings
-LOGOUT_REDIRECT_URL = 'home'
-LOGIN_URL = 'login'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 # CUSTOM SETTINGS
 SITE_NAME = 'MOMO Ristorante'
 
-# REST FRAMEWORK
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-        # 'rest_framework.permissions.AllowAny', - for everything!
-    ],
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication',
-        # 'rest_framework.authentication.BasicAuthentication'
-        'rest_framework.authentication.TokenAuthentication',
-    ],
-    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
-}
-
-
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-SITE_ID = 1
-
+# Django debugger
 INTERNAL_IPS = [
     # ...
     '127.0.0.1',

@@ -3,12 +3,12 @@
     ================
     Main entry view for 'public'.
 """
+from blogs.models import Blog
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import TemplateView
-
-from blogs.models import Blog
 from recipes.models import Recipe
+
 from .models import Homepage, Setting
 
 
@@ -42,24 +42,7 @@ class AboutView(TemplateView):
         return {'posts': posts}
 
 
-def blogs(request):
-    """ Return blog archive. """
-    blog_posts = Blog.objects.all()
-    return render(request, 'blogs/index.html', {
-        'blog_posts': blog_posts
-    })
 
-
-def blog_detail(request, id):
-    """
-    Return single page for a blog.
-    :param id: blog id
-    :return: render()
-    """
-    blog_id = get_object_or_404(Blog, pk=id)
-    return render(request, 'blogs/blog_detail.html', {
-        'blog': blog_id
-    })
 
 
 def contact(request):
